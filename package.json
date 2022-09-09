@@ -10,6 +10,7 @@
     "build": "turbo run build --filter=next-commerce...",
     "dev": "turbo run dev",
     "start": "turbo run start",
+    "postinstall": "yarn workspace @vercel/commerce-shopify run build",
     "types": "turbo run types",
     "prettier-fix": "prettier --write ."
   },
