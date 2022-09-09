@@ -9,6 +9,7 @@ const getProductQuery = /* GraphQL */ `
       vendor
       description
       descriptionHtml
+      tags
       options {
         id
         name
