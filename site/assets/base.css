@@ -1,3 +1,10 @@
+@font-face {
+  font-family: julpap;
+  font-style: normal;
+  font-weight: normal;
+  src: url(./fashionGrotesk.otf);
+}
+
 :root {
   --primary: #ffffff;
   --primary-2: #f1f3f5;
@@ -30,8 +37,7 @@
   --accent-7: #333333;
   --accent-8: #111111;
   --accent-9: #000;
-  --font-sans: -apple-system, system-ui, BlinkMacSystemFont, 'Helvetica Neue',
-    'Helvetica', sans-serif;
+  --font-sans: julpap, sans-serif;
 }
 
 [data-theme='dark'] {
