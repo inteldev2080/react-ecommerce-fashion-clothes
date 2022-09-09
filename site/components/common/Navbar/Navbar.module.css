@@ -26,10 +26,9 @@
 }
 
 .logo {
-  @apply cursor-pointer rounded-full border transform duration-100 ease-in-out;
+  @apply cursor-pointer transform duration-100 ease-in-out;
 
   &:hover {
-    @apply shadow-md;
-    transform: scale(1.05);
+    transform: scale(1.015);
   }
 }

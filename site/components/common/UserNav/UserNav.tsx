@@ -4,14 +4,14 @@ import s from './UserNav.module.css'
 import { Avatar } from '@components/common'
 import useCart from '@framework/cart/use-cart'
 import { useUI } from '@components/ui/context'
-import { Heart, Bag, Menu } from '@components/icons'
+import { Heart, Menu } from '@components/icons'
 import CustomerMenuContent from './CustomerMenuContent'
 import useCustomer from '@framework/customer/use-customer'
 import React from 'react'
 import {
+  Button,
   Dropdown,
   DropdownTrigger as DropdownTriggerInst,
-  Button,
 } from '@components/ui'
 
 import type { LineItem } from '@commerce/types/cart'
@@ -50,10 +50,8 @@ const UserNav: React.FC<{
               }}
               aria-label={`Cart items: ${itemsCount}`}
             >
-              <Bag />
-              {itemsCount > 0 && (
-                <span className={s.bagCount}>{itemsCount}</span>
-              )}
+              Cart
+              {itemsCount > 0 && <span>({itemsCount})</span>}
             </Button>
           </li>
         )}

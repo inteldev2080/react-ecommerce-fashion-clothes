@@ -1,5 +1,5 @@
 .root {
-  @apply relative text-sm bg-accent-0 text-base w-full transition-colors duration-150 border border-accent-2;
+  @apply relative flex bg-accent-0 text-base w-full transition-colors duration-150 border border-gray-60;
 }
 
 .input {

@@ -1,8 +1,8 @@
 .root {
   @apply bg-accent-9 text-accent-0 cursor-pointer inline-flex
-  px-10 py-5 leading-6 transition ease-in-out duration-150
+  px-6 py-3 leading-6 transition ease-in-out duration-150
   shadow-sm text-center justify-center uppercase
-  border border-transparent items-center text-sm font-semibold
+  border border-transparent items-center
   tracking-wide;
   max-height: 64px;
 }
