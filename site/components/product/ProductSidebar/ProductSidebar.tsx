@@ -9,6 +9,8 @@ import {
   selectDefaultOptionFromProduct,
   SelectedOptions,
 } from '../helpers'
+import ProductTag from '@components/product/ProductTag'
+import usePrice from '@framework/product/use-price'
 
 interface ProductSidebarProps {
   product: Product
@@ -41,8 +43,19 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
     }
   }
 
+  const { price } = usePrice({
+    amount: product.price.value,
+    baseAmount: product.price.retailPrice,
+    currencyCode: product.price.currencyCode!,
+  })
+
   return (
     <div className={className}>
+      <ProductTag
+        name={product.name}
+        price={`${price} ${product.price?.currencyCode}`}
+        fontSize={32}
+      />
       <ProductOptions
         options={product.options}
         selectedOptions={selectedOptions}
