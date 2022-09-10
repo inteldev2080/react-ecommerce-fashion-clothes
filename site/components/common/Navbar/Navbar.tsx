@@ -12,11 +12,12 @@ interface Link {
 
 interface NavbarProps {
   links?: Link[]
+  className?: string
 }
 
-const Navbar: FC<NavbarProps> = ({ links }) => (
+const Navbar: FC<NavbarProps> = ({ links, className = '' }) => (
   <NavbarRoot>
-    <Container clean className="mx-auto max-w-8xl px-6">
+    <Container clean className="mx-auto max-w-8xl px-8">
       <div className={s.nav}>
         <div className="flex items-center flex-1">
           <Link href="/">

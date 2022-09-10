@@ -1,17 +1,19 @@
 .root {
-  @apply relative flex bg-accent-0 text-base w-full transition-colors duration-150 border border-gray-60;
+  @apply relative flex text-base w-full;
 }
 
 .input {
-  @apply bg-transparent px-3 py-2 appearance-none w-full transition duration-150 ease-in-out pr-10;
+  @apply bg-transparent pl-6 pr-3 py-3 appearance-none w-full transition duration-150 ease-in-out pr-10 outline-0;
+  @apply ring-1 ring-inset ring-black;
+}
+
+.input:focus,
+.root:hover > .input {
+  @apply ring-2;
 }
 
 .input::placeholder {
   @apply text-accent-3;
-}
-
-.input:focus {
-  @apply outline-none shadow-outline-normal;
 }
 
 .iconContainer {

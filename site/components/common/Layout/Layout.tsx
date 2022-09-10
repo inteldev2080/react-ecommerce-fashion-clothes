@@ -5,11 +5,11 @@ import { useRouter } from 'next/router'
 import { CommerceProvider } from '@framework'
 import LoginView from '@components/auth/LoginView'
 import { useUI } from '@components/ui/context'
-import { Navbar, Footer } from '@components/common'
+import { Footer, Navbar } from '@components/common'
 import ShippingView from '@components/checkout/ShippingView'
 import CartSidebarView from '@components/cart/CartSidebarView'
 import { useAcceptCookies } from '@lib/hooks/useAcceptCookies'
-import { Sidebar, Button, LoadingDots } from '@components/ui'
+import { Button, LoadingDots, Sidebar } from '@components/ui'
 import PaymentMethodView from '@components/checkout/PaymentMethodView'
 import CheckoutSidebarView from '@components/checkout/CheckoutSidebarView'
 import { CheckoutProvider } from '@components/checkout/context'
@@ -17,6 +17,7 @@ import { MenuSidebarView } from '@components/common/UserNav'
 import type { Page } from '@commerce/types/page'
 import type { Category } from '@commerce/types/site'
 import type { Link as LinkProps } from '../UserNav/MenuSidebarView'
+import React from 'react'
 
 const Loading = () => (
   <div className="w-80 h-80 flex items-center text-center justify-center p-3">
@@ -53,6 +54,7 @@ interface Props {
     pages?: Page[]
     categories: Category[]
   }
+  showNavbar?: boolean
 }
 
 const ModalView: React.FC<{ modalView: string; closeModal(): any }> = ({
@@ -103,6 +105,7 @@ const SidebarUI: React.FC<{ links: LinkProps[] }> = ({ links }) => {
 }
 
 const Layout: React.FC<Props> = ({
+  showNavbar = true,
   children,
   pageProps: { categories = [], ...pageProps },
 }) => {
@@ -116,7 +119,7 @@ const Layout: React.FC<Props> = ({
   return (
     <CommerceProvider locale={locale}>
       <div className={cn(s.root)}>
-        <Navbar links={navBarlinks} />
+        {showNavbar && <Navbar links={navBarlinks} />}
         <main className="fit">{children}</main>
         <Footer pages={pageProps.pages} />
         <ModalUI />
@@ -137,4 +140,9 @@ const Layout: React.FC<Props> = ({
   )
 }
 
+const LayoutNoNavbar: React.FC<Props> = ({ ...props }) => (
+  <Layout {...props} showNavbar={false} />
+)
+
 export default Layout
+export { LayoutNoNavbar }

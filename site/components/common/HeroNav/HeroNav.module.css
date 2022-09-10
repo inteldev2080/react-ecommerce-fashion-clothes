@@ -1,0 +1,28 @@
+.root {
+  @apply min-h-screen grid;
+  grid-template-areas:
+    'side nav'
+    'side main';
+}
+
+.nav {
+  grid-area: nav;
+}
+
+.sidebar {
+  grid-area: side;
+  @apply py-9 px-12 flex flex-col items-start justify-center space-y-12;
+
+  .button {
+    @apply text-primary uppercase pl-3 border-l-2 border-transparent transition-colors;
+
+    &:hover,
+    &.active {
+      @apply border-current;
+    }
+  }
+}
+
+.main {
+  grid-area: main;
+}

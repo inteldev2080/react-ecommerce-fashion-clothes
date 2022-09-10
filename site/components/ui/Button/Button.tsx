@@ -1,7 +1,7 @@
 import cn from 'clsx'
 import React, {
-  forwardRef,
   ButtonHTMLAttributes,
+  forwardRef,
   JSXElementConstructor,
   useRef,
 } from 'react'
@@ -12,7 +12,7 @@ import { LoadingDots } from '@components/ui'
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   href?: string
   className?: string
-  variant?: 'flat' | 'slim' | 'ghost' | 'naked'
+  variant?: 'flat' | 'slim' | 'ghost' | 'naked' | 'naked-ls'
   active?: boolean
   type?: 'submit' | 'reset' | 'button'
   Component?: string | JSXElementConstructor<any>
@@ -43,6 +43,7 @@ const Button: React.FC<ButtonProps> = forwardRef((props, buttonRef) => {
       [s.ghost]: variant === 'ghost',
       [s.slim]: variant === 'slim',
       [s.naked]: variant === 'naked',
+      [s.nakedLeftSide]: variant === 'naked-ls',
       [s.loading]: loading,
       [s.disabled]: disabled,
     },

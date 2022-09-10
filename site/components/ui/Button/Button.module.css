@@ -1,14 +1,14 @@
 .root {
   @apply bg-accent-9 text-accent-0 cursor-pointer inline-flex
-  px-6 py-3 leading-6 transition ease-in-out duration-150
-  shadow-sm text-center justify-center uppercase
-  border border-transparent items-center
+  px-6 py-2 leading-6 transition ease-in-out duration-150
+  shadow-sm text-center justify-center
+  border border-2 border-secondary items-center
   tracking-wide;
   max-height: 64px;
 }
 
 .root:hover {
-  @apply border-accent-9 bg-accent-6;
+  @apply bg-primary text-primary;
 }
 
 .root:focus {
@@ -35,13 +35,31 @@
   @apply border-accent-9 bg-accent-9 text-accent-0;
 }
 
-.naked {
-  @apply bg-transparent font-semibold border-none shadow-none outline-none py-0 px-0;
+.naked,
+.nakedLeftSide {
+  @apply bg-transparent border-none shadow-none outline-none py-0 px-0;
+}
+
+.nakedLeftSide {
+  @apply pl-3 border-l-2 !important;
+}
+
+.naked:hover,
+.naked:focus,
+.nakedLeftSide:hover,
+.nakedLeftSide:focus {
+  @apply bg-transparent border-none;
+  @apply border-solid border-0 border-current !important;
 }
 
 .naked:hover,
 .naked:focus {
-  @apply bg-transparent border-none;
+  @apply border-b-2 pb-1 !important;
+}
+
+.nakedLeftSide:hover,
+.nakedLeftSide:focus {
+  @apply border-l-current !important;
 }
 
 .disabled,

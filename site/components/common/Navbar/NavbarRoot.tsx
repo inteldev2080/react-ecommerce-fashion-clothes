@@ -1,9 +1,14 @@
-import { FC, useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import throttle from 'lodash.throttle'
 import cn from 'clsx'
 import s from './Navbar.module.css'
 
-const NavbarRoot: FC = ({ children }) => {
+interface Props {
+  className?: string
+  children: React.ReactNode
+}
+
+const NavbarRoot = ({ children, className }: Props): JSX.Element => {
   const [hasScrolled, setHasScrolled] = useState(false)
 
   useEffect(() => {
@@ -24,7 +29,7 @@ const NavbarRoot: FC = ({ children }) => {
   }, [hasScrolled])
 
   return (
-    <div className={cn(s.root, { 'shadow-magical': hasScrolled })}>
+    <div className={cn(s.root, { 'shadow-magical': hasScrolled }, className)}>
       {children}
     </div>
   )
