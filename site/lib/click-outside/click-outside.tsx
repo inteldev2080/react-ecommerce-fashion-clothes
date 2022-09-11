@@ -1,13 +1,13 @@
 import React, {
-  useRef,
-  useEffect,
-  MouseEvent,
   FC,
-  ReactElement,
   forwardRef,
+  MouseEvent,
+  ReactElement,
   Ref,
+  useEffect,
+  useRef,
 } from 'react'
-import mergeRefs from 'react-merge-refs'
+import { mergeRefs } from 'react-merge-refs'
 import hasParent from './has-parent'
 
 interface ClickOutsideProps {
