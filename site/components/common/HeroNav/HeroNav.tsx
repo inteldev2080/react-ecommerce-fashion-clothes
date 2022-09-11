@@ -49,7 +49,12 @@ const HeroNav = ({ products }: Props): JSX.Element => {
       </nav>
       <div className={s.main}>
         {activeProduct && <ActiveProduct product={activeProduct} />}
-        <Image src="/hero.png" height={500} width={450} />
+        <Image
+          src="/hero.png"
+          layout="fill"
+          objectFit="contain"
+          objectPosition="right"
+        />
       </div>
     </div>
   )
