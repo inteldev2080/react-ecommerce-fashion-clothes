@@ -1,5 +1,5 @@
 .root {
-  @apply bg-accent-9 text-accent-0 cursor-pointer inline-flex
+  @apply relative bg-accent-9 text-accent-0 cursor-pointer inline-flex
   px-6 py-2 leading-6 transition ease-in-out duration-150
   shadow-sm text-center justify-center
   border border-2 border-secondary items-center

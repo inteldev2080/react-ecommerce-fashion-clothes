@@ -29,7 +29,9 @@ const NavbarRoot = ({ children, className }: Props): JSX.Element => {
   }, [hasScrolled])
 
   return (
-    <div className={cn(s.root, { 'shadow-magical': hasScrolled }, className)}>
+    <div
+      className={cn(s.root, /*{ 'shadow-magical': hasScrolled },*/ className)}
+    >
       {children}
     </div>
   )
