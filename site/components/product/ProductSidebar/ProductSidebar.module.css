@@ -65,6 +65,24 @@
   @apply grid grid-cols-2 py-2 gap-2 md:grid-cols-4 md:gap-7;
 }
 
+
+/* CUSTOMIZE SCROLLER *//* width */
+.description::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Handle */
+.description::-webkit-scrollbar-thumb {
+  background: #D1D3DE;
+  border-radius: 50px;
+  height: 37px;
+}
+
+/* Handle on hover */
+.description::-webkit-scrollbar-thumb:hover {
+  background: #34455E;
+}
+
 @screen lg {
   .root {
     @apply grid-cols-12;

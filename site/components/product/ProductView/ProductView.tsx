@@ -18,31 +18,32 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
   return (
     <>
       <Container className="max-w-none w-full" clean>
-        <div className={cn(s.root, 'fit')}>
+        {/* <div className={cn(s.root, 'fit')}> */}
+        <div className="flex mt-[84px] flex-wrap lg:flex-nowrap">
           <ProductSidebar
             key={product.id}
             product={product}
             className={s.sidebar}
           />
 
-          <div className={cn(s.main, 'fit')}>
-            <div className={s.sliderContainer}>
-              <ProductSlider key={product.id}>
-                {product.images.map((image, i) => (
-                  <div key={image.url} className={s.imageContainer}>
-                    <Image
-                      className={s.img}
-                      src={image.url!}
-                      alt={image.alt || 'Product Image'}
-                      width={600}
-                      height={600}
-                      priority={i === 0}
-                      quality="85"
-                    />
-                  </div>
-                ))}
-              </ProductSlider>
-            </div>
+          {/* <div className={cn(s.main, 'fit')}>
+            <div className={s.sliderContainer}> */}
+          <div className="h-[1142px] overflow-scroll px-[32px]">
+            <ProductSlider key={product.id}>
+              {product.images.map((image, i) => (
+                <div key={image.url} className={s.imageContainer}>
+                  <Image
+                    className={s.img}
+                    src={image.url!}
+                    alt={image.alt || 'Product Image'}
+                    width={600}
+                    height={600}
+                    priority={i === 0}
+                    quality="85"
+                  />
+                </div>
+              ))}
+            </ProductSlider>
             {process.env.COMMERCE_WISHLIST_ENABLED && (
               <WishlistButton
                 className={s.wishlistButton}
