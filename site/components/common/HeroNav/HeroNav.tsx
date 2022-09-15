@@ -19,15 +19,20 @@ const ActiveProduct = ({ product }: { product: Product }) => {
         height={320}
         width={320}
         objectFit="contain"
+        objectPosition="right"
+        className={s.activeImage}
       />
-      <Link href={`/product/${product.path}`}>
-        <Button Component={'a'} className={s.link}>
+      <Link href={`/product/${product.slug}`}>
+        <Button Component={'a'} className={s.productLink}>
           <span>
-            <span>Unit</span>+ {product.name}
+            <span className={s.unit}>Unit</span>+ {product.name}
           </span>
           <span>View Product</span>
         </Button>
       </Link>
+      <div className={s.desc}>
+        <span>{product.description}</span>
+      </div>
     </div>
   )
 }

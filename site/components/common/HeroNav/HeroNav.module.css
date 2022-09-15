@@ -30,30 +30,38 @@
   grid-area: main;
 }
 
+.heroImage {
+  @apply absolute z-0 top-16;
+}
+
 .activeProduct {
-  @apply relative z-20 w-44 h-72;
+  @apply ml-8 flex flex-col items-end space-y-4 z-20 w-[500px];
 
-  .link {
-    @apply uppercase first:opacity-100 last:opacity-0;
+  .desc {
+    @apply self-start w-2/3;
 
-    & > * {
-      @apply transition-opacity;
+    & > span {
+      @apply box-decoration-clone bg-secondary text-secondary;
     }
-
-    & > :last-child {
-      @apply absolute inset-0 m-auto opacity-0;
-    }
-
-    &:hover > * {
-      @apply first:opacity-0 last:opacity-100;
-    }
-  }
-
-  .link:hover {
-    @apply first:opacity-0 last:opacity-100;
   }
 }
 
-.heroImage {
-  @apply absolute z-0 top-16;
+.productLink {
+  @apply pl-16 py-5 w-full uppercase text-3xl;
+
+  .unit {
+    @apply absolute inset-y-0 left-4 block -rotate-90 text-xl;
+  }
+
+  & > * {
+    @apply transition-opacity;
+  }
+
+  & > :last-child {
+    @apply absolute inset-0 m-auto flex items-center justify-center opacity-0;
+  }
+
+  &:hover > * {
+    @apply first:opacity-0 last:opacity-100;
+  }
 }
