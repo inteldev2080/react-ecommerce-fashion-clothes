@@ -13,7 +13,7 @@ import ProductTag from '@components/product/ProductTag'
 import usePrice from '@framework/product/use-price'
 import Image from 'next/image'
 import ICON_P_1 from '../../../public/icon_P_1.png'
-
+import { Plus } from '@components/icons'
 interface ProductSidebarProps {
   product: Product
   className?: string
@@ -26,6 +26,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
   const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>({})
 
   useEffect(() => {
+    console.log(product)
     selectDefaultOptionFromProduct(product, setSelectedOptions)
   }, [product])
 
@@ -59,36 +60,30 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
 
       {/* <div className={className}> */}
 
-      <div className="basis-2/4 mx-auto lg:px-[0px] px-[15px]">
+      <div className="basis-2/4 mx-auto px-4 lg:px-0">
         <ProductTag
           name={product.name}
           price={`${price} ${product.price?.currencyCode}`}
           fontSize={32}
         />
 
-        <div className="mt-[24px] flex justify-between">
-          <div className="bg-black px-[16px] py-[8px] text-white">TypeWR</div>
-          <div className="bg-black px-[16px] py-[8px] text-white">Gen!</div>
-          <div className="bg-black px-[16px] py-[8px] text-white">Lightshellstyle</div>
-          <div className="bg-black px-[16px] py-[8px] text-white">Lightshellstyle</div>
+        <div className="mt-6 flex gap-4">
+          {product.tags?.map((item: any, index: number) => {
+            return (
+              <div key={index} className={s.productTags}>{item}</div>
+            )
+          })}
         </div>
 
-        <div className="mt-[80px]">
-          <div className="flex items-center gap-[13px]">
-            <h3 className="text-[24px] font-[400]">Description</h3>
-            <div className="w-[10px] h-[10px] bg-black"></div>
+        <div className="mt-20">
+          <div className="flex items-center">
+            <h3 className={s.heading}>Description</h3>
           </div>
-          {/* <Text
-            className="leading-[205%] pb-4 break-words w-full max-w-xl"
-            html='The ultimate in DFMA contour fit. Featuring a fully 3-dimensional cut, ǍCROŇYMř signature X-back yoke, and sleeve anchor loops with a watch access zip, J97 is an ergonomic second skin. Light enough to feel like a shirt, yet resistant enough to platform like a jacket, it rides the multi-season line between inner (winter) and outer (summer) layer.'
-          /> */}
-          <div className={`${s.description} leading-[205%] mt-[12px] break-words w-[477px] max-h-[198px] overflow-scroll`}>The ultimate in DFMA contour fit. Featuring a fully 3-dimensional cut, ǍCROŇYMř signature X-back yoke, and sleeve anchor loops with a watch access zip, J97 is an ergonomic second skin. Light enough to feel like a shirt, yet resistant enough to platform like a jacket, it rides the multi-season line between inner (winter) and outer (summer) layer.
-          </div>
+          <div className={s.description}>{product.description}</div>
         </div>
-        <div className="mt-[48px]">
-          <div className="flex items-center gap-[13px]">
-            <h3 className="text-[24px] font-[400]">Size</h3>
-            <div className="w-[10px] h-[10px] bg-black"></div>
+        <div className="mt-12">
+          <div className="flex items-center">
+            <h3 className={s.heading}>Size</h3>
           </div>
           <ProductOptions
             options={product.options}
@@ -96,7 +91,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
             setSelectedOptions={setSelectedOptions}
           />
         </div>
-        <div className="mt-[50px]">
+        <div className="mt-12">
           {process.env.COMMERCE_CART_ENABLED && (
             <Button
               aria-label="Add to Cart"
@@ -108,35 +103,72 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
             >
               {variant?.availableForSale === false
                 ? 'Not Available'
-                : 'Add To Cart'}
+                : <><Plus className="h-10 w-10" /> Add To Cart</>}
             </Button>
           )}
         </div>
-        <div className="mt-[40px]">
-          <Collapse title="Size Guide">
-            This is a limited edition production run. Printing starts when the
-            drop ends.
-          </Collapse>
-          <Collapse title="Fabric Technology">
-            This is a limited edition production run. Printing starts when the
-            drop ends. Reminder: Bad Boys For Life. Shipping may take 10+ days due
-            to COVID-19.
-          </Collapse>
-          <Collapse title="Subsytems">
-            This is a limited edition production run. Printing starts when the
-            drop ends. Reminder: Bad Boys For Life. Shipping may take 10+ days due
-            to COVID-19.
-          </Collapse>
-          <Collapse title="Shipping & Returns">
-            This is a limited edition production run. Printing starts when the
-            drop ends. Reminder: Bad Boys For Life. Shipping may take 10+ days due
-            to COVID-19.
-          </Collapse>
-          <Collapse title="Includes">
-            This is a limited edition production run. Printing starts when the
-            drop ends. Reminder: Bad Boys For Life. Shipping may take 10+ days due
-            to COVID-19.
-          </Collapse>
+        <div className="mt-14">
+          <div className="flex items-center">
+            <h3 className={s.heading}>Size Guide</h3>
+          </div>
+          <div className="mt-12">
+            Fits true to size. We recommend that you take your normal size.
+
+            Take the next size up if you wish to achieve a looser fit.
+
+            Model wears size Medium.  measurements are:
+
+            Height 6’1″ (186cm);
+            Chest 38″ (96cm);
+            Waist 32″(81.5cm);
+            Suit 38L.
+          </div>
+        </div>
+        <div className="mt-14">
+          <div className="flex items-center">
+            <h3 className={s.heading}>Fabric Technology</h3>
+          </div>
+          <div className="mt-12">
+            NYLON STRETCH
+
+            (98% PA, 2% EL)
+
+            Water repellent, breathable
+
+            Fabric made in USA
+
+            Military specification
+          </div>
+        </div>
+        <div className="mt-14">
+          <div className="flex items-center">
+            <h3 className={s.heading}>Subsytems</h3>
+          </div>
+          <div className="mt-12">
+            JacketSlingǽ
+
+            Pockets: 4
+            _External: 2
+            _Internal: 2
+          </div>
+        </div>
+        <div className="mt-14">
+          <div className="flex items-center">
+            <h3 className={s.heading}>Shipping & Returns</h3>
+          </div>
+          <div className="mt-12">
+            READY TO SHIP.
+            PRODUCTS ARE LIMITED STOCK.
+            ALL SALES ARE FINAL.
+          </div>
+        </div>
+        <div className="mt-14">
+          <div className="flex items-center">
+            <h3 className={s.heading}>Includes</h3>
+          </div>
+          <div className="mt-12">
+            JacketSlingǽ [ Removable ]
+          </div>
         </div>
       </div>
     </div>

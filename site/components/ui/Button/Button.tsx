@@ -39,6 +39,7 @@ const Button: React.FC<ButtonProps> = forwardRef((props, buttonRef) => {
   const ref = useRef<typeof Component>(null)
   const rootClassName = cn(
     s.root,
+    s.buttonTextDecoration,
     {
       [s.ghost]: variant === 'ghost',
       [s.slim]: variant === 'slim',
@@ -58,14 +59,13 @@ const Button: React.FC<ButtonProps> = forwardRef((props, buttonRef) => {
       className={rootClassName}
       disabled={disabled}
       style={{
-        height: children === 'Add To Cart' ? "81px" : "",
         width,
         ...style,
       }}
       {...rest}
     >
 
-      {children === 'Add To Cart' ? <span className="text-[28px] uppercase flex items-center gap-[1rem]">{!loading && (<Plus className="h-[40px] w-[40px]" />)}{children}</span> : children}
+      {children}
       {loading && (
         <i className="pl-2 m-0 flex">
           <LoadingDots />

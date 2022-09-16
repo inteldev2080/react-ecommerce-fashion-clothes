@@ -19,7 +19,7 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
     <>
       <Container className="max-w-none w-full" clean>
         {/* <div className={cn(s.root, 'fit')}> */}
-        <div className="flex mt-[84px] flex-wrap lg:flex-nowrap">
+        <div className="flex mt-20 flex-wrap lg:flex-nowrap">
           <ProductSidebar
             key={product.id}
             product={product}
@@ -28,7 +28,7 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
 
           {/* <div className={cn(s.main, 'fit')}>
             <div className={s.sliderContainer}> */}
-          <div className="h-[1142px] overflow-scroll px-[32px]">
+          <div className="px-8">
             <ProductSlider key={product.id}>
               {product.images.map((image, i) => (
                 <div key={image.url} className={s.imageContainer}>

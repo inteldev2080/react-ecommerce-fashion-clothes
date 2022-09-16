@@ -10,6 +10,10 @@
   height: 48px;
 }
 
+.buttonSizeTextDecoration {
+  font-size: 24px;
+}
+
 .swatch::before,
 .swatch::after {
   box-sizing: border-box;

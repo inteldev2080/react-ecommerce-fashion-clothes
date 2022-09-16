@@ -29,6 +29,7 @@ const Swatch: React.FC<Omit<ButtonProps, 'variant'> & SwatchProps> = ({
 
   const swatchClassName = cn(
     s.swatch,
+    s.buttonSizeTextDecoration,
     {
       [s.color]: color,
       [s.active]: active,
