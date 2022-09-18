@@ -1,8 +1,8 @@
-import { FC, useEffect, useState, useCallback } from 'react'
+import { FC, useCallback, useEffect, useState } from 'react'
 import { validate } from 'email-validator'
 import { Info } from '@components/icons'
 import { useUI } from '@components/ui/context'
-import { Logo, Button, Input } from '@components/ui'
+import { Button, Input, Logo } from '@components/ui'
 import useSignup from '@framework/auth/use-signup'
 
 interface Props {}
@@ -41,7 +41,7 @@ const SignUpView: FC<Props> = () => {
       setLoading(false)
       closeModal()
     } catch ({ errors }) {
-      setMessage(errors[0].message)
+      setMessage((errors as any)?.[0]?.message)
       setLoading(false)
     }
   }
