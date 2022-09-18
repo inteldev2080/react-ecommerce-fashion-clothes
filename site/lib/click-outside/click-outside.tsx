@@ -13,6 +13,7 @@ import hasParent from './has-parent'
 interface ClickOutsideProps {
   active: boolean
   onClick: (e?: MouseEvent) => void
+  children: ReactElement
   ref?: Ref<any>
 }
 
