@@ -90,12 +90,19 @@
   background-color: black;
 }
 
+.mainLogo{
+ margin-top: 44px;
+ position: fixed;
+ width: 110px;
+}
+
 .description{
   width: 477px;
   /* max-height: 12rem; */
   line-height: 205%;
   margin-top: 0.75rem;
   overflow-wrap: break-word;
+  border-right: 2px solid;
   /* overflow: scroll; */
 }
 

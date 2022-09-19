@@ -26,7 +26,6 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
   const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>({})
 
   useEffect(() => {
-    console.log(product)
     selectDefaultOptionFromProduct(product, setSelectedOptions)
   }, [product])
 
@@ -53,8 +52,8 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
   })
 
   return (
-    <div className="flex" >
-      <div className="mt-[45px]">
+    <div className="flex w-full">
+      <div className={s.mainLogo}>
         <Image src={ICON_P_1} alt="ICON_P_1" />
       </div >
 
@@ -111,7 +110,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
           <div className="flex items-center">
             <h3 className={s.heading}>Size Guide</h3>
           </div>
-          <div className="mt-12">
+          <div className="mt-12 w-60">
             Fits true to size. We recommend that you take your normal size.
 
             Take the next size up if you wish to achieve a looser fit.
@@ -124,7 +123,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
             Suit 38L.
           </div>
         </div>
-        <div className="mt-14">
+        <div className="mt-14 w-60">
           <div className="flex items-center">
             <h3 className={s.heading}>Fabric Technology</h3>
           </div>
@@ -140,7 +139,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
             Military specification
           </div>
         </div>
-        <div className="mt-14">
+        <div className="mt-14 w-60">
           <div className="flex items-center">
             <h3 className={s.heading}>Subsytems</h3>
           </div>
@@ -152,7 +151,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
             _Internal: 2
           </div>
         </div>
-        <div className="mt-14">
+        <div className="mt-14 w-60">
           <div className="flex items-center">
             <h3 className={s.heading}>Shipping & Returns</h3>
           </div>
@@ -166,7 +165,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
           <div className="flex items-center">
             <h3 className={s.heading}>Includes</h3>
           </div>
-          <div className="mt-12">
+          <div className="mt-12 w-60">
             JacketSlingǽ [ Removable ]
           </div>
         </div>

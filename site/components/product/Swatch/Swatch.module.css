@@ -26,7 +26,9 @@
 }
 
 .swatch:hover {
-  @apply transform scale-110 bg-hover;
+  /* @apply transform scale-110 bg-hover; */
+  color: white;
+  background: black;
 }
 
 .swatch > span {
@@ -47,9 +49,11 @@
 }
 
 .active {
-  @apply border-accent-9 border-2;
+  color: white;
+  background: black;
+  /* @apply border-accent-9 border-2; 
   padding-right: 1px;
-  padding-left: 1px;
+  padding-left: 1px;*/
 }
 
 .textLabel {

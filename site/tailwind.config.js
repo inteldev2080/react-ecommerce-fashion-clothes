@@ -44,6 +44,10 @@ module.exports = {
         primary: 'var(--text-primary)',
         secondary: 'var(--text-secondary)',
       },
+      fontSize: {
+        '64xl': '64px',
+        '36xl': '36px',
+      },
       boxShadow: {
         'outline-normal': '0 0 0 2px var(--accent-2)',
         magical:

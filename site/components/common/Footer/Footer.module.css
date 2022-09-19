@@ -11,3 +11,21 @@
     @apply scale-110;
   }
 }
+
+.onHoverLT, .onHoverCP{
+  width: fit-content;
+}
+.onHoverLT > a{
+  padding-bottom: 8px;
+}
+
+.onHoverCP > a{
+  padding-bottom: 8px;
+}
+
+.onHoverLT > a:hover{
+  border-bottom: 2px solid white;
+}
+.onHoverCP > a:hover{
+  border-bottom: 2px solid white;
+}

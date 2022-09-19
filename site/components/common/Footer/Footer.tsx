@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import cn from 'clsx'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
@@ -30,37 +30,45 @@ const links = [
 ]
 
 const Footer: FC<Props> = ({ className, pages }) => {
+  const { pathname } = useRouter();
   const { sitePages } = usePages(pages)
   const rootClassName = cn(s.root, className)
+
+  useEffect(() => {
+  }, [pathname]);
 
   return (
     <footer className={rootClassName}>
       <Container>
-        <div className="mt-[56px] w-[100%] md:w-[60%]">
-          <p className="leading-7">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-          <p className="mt-[53px] leading-8">
-            All contents of this website are the property of fashioncubed LLC. No part of this site, including all text and images, may be reproduced in any form without the prior written consent of fashioncubed LLC.
-          </p>
-          <p className="mt-[42px]">
-            Independently owned and operated.
-          </p>
-          <p className="mt-[30px]">
-            7014 13th avenue suite 202, Brooklyn, NY, United States, 11228
-          </p>
-          <p className="mt-[30px]">
-            Our inquiry email address is hello@fashion3.io
-          </p>
-        </div>
-        <div className="mt-[72px] w-[165px] flex items-center justify-between">
-          <Image src={ICON_F_1} alt="ICON_F_1" />
-          <Image src={ICON_F_2} alt="ICON_F_2" />
-        </div>
-        <div className="mt-[52px] flex flex-wrap items-start justify-center lg:justify-between md:justify-center">
-          <div className="lg:flex-1 mt-[20px] sm:ml-[50px] md:ml-[0px]">
+        {pathname === '/' && (
+          <>
+            <div className="mt-14 w-full md:w-[60%]">
+              <p className="leading-7">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+              <p className="mt-14 leading-8">
+                All contents of this website are the property of fashioncubed LLC. No part of this site, including all text and images, may be reproduced in any form without the prior written consent of fashioncubed LLC.
+              </p>
+              <p className="mt-11">
+                Independently owned and operated.
+              </p>
+              <p className="mt-8">
+                7014 13th avenue suite 202, Brooklyn, NY, United States, 11228
+              </p>
+              <p className="mt-8">
+                Our inquiry email address is hello@fashion3.io
+              </p>
+            </div>
+            <div className="mt-16 w-40 flex items-center justify-between">
+              <Image src={ICON_F_1} alt="ICON_F_1" />
+              <Image src={ICON_F_2} alt="ICON_F_2" />
+            </div>
+          </>
+        )}
+        <div className="mt-12 flex flex-wrap items-start justify-center lg:justify-between md:justify-center">
+          <div className="lg:flex-1 mt-5 sm:ml-[50px] md:ml-0">
             <div>
               <Image src={ICON_F_3} alt='ICON_F_3' />
             </div>
-            <div className="mt-[58px] ml-[30px] flex items-center gap-[2rem]">
+            <div className="mt-14 ml-8 flex items-center gap-[2rem]">
               <a href="">
                 <Image src={ICON_F_I_1} alt='ICON_F_I_1' />
               </a>
@@ -72,18 +80,18 @@ const Footer: FC<Props> = ({ className, pages }) => {
               </a>
             </div>
           </div>
-          <div className="mt-[20px] ml-[50px]">
-            <h3>LEGAL TERMS AND CONDITIONS</h3>
-            <div className="flex flex-col gap-[32px]">
-              <a className="mt-[32px]" href="">Legal Notice</a>
+          <div className="mt-5 ml-12">
+            <h3 className="text-lg">LEGAL TERMS AND CONDITIONS</h3>
+            <div className={`${s.onHoverLT} flex flex-col gap-8 text-sm`}>
+              <a className="mt-8" href="">Legal Notice</a>
               <a href="">Privacy Policy</a>
               <a href="">Cookie Policy</a>
             </div>
           </div>
-          <div className="mt-[20px] ml-[50px] md:mr-[220px]">
-            <h3>COMPANY INFO</h3>
-            <div className="flex flex-col gap-[32px]">
-              <a className="mt-[32px]" href="">Shipping</a>
+          <div className="mt-5 ml-12 md:mr-56">
+            <h3 className="text-lg">COMPANY INFO</h3>
+            <div className={`${s.onHoverCP} flex flex-col gap-8 text-sm`}>
+              <a className="mt-8" href="">Shipping</a>
               <a href="">Sizing</a>
               <a href="">Repairs</a>
             </div>

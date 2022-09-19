@@ -17,10 +17,10 @@ const ProductTag: React.FC<ProductTagProps> = ({
 }) => {
   return (
     <div>
-      <h3 className="text-[64px] leading-[95%]">
+      <h3 className="text-64xl leading-[95%]">
         {name}
       </h3>
-      <div className="text-[36px]">{price}</div>
+      <div className="text-36xl">{price}</div>
     </div>
   )
 }
