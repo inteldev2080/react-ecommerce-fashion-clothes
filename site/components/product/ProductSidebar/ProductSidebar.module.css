@@ -21,10 +21,10 @@
 
 .header .name span {
   @apply py-4 px-6 bg-primary text-primary font-bold;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
   font-size: inherit;
   letter-spacing: inherit;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
 }
 
 .header .price {
@@ -54,7 +54,15 @@
 }
 
 .button {
-  width: 100%;
+  @apply w-full h-20 flex items-center text-3xl uppercase;
+}
+
+.heading {
+  @apply text-2xl font-medium flex items-center;
+}
+
+.heading::after {
+  @apply content-[''] bg-secondary block h-2.5 w-2.5 ml-2.5;
 }
 
 .wishlistButton {
@@ -63,6 +71,45 @@
 
 .relatedProductsGrid {
   @apply grid grid-cols-2 py-2 gap-2 md:grid-cols-4 md:gap-7;
+}
+
+.productTags {
+  background-color: black;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+
+.mainLogo {
+  margin-top: 44px;
+  position: fixed;
+  width: 110px;
+}
+
+.description {
+  border-right: 2px solid;
+  /* max-height: 12rem; */
+  line-height: 205%;
+  margin-top: 0.75rem;
+  overflow-wrap: break-word;
+  width: 477px;
+  /* overflow: scroll; */
+}
+
+/* CUSTOMIZE SCROLLER */ /* width */
+.description::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Handle */
+.description::-webkit-scrollbar-thumb {
+  background: #d1d3de;
+  border-radius: 50px;
+  height: 37px;
+}
+
+/* Handle on hover */
+.description::-webkit-scrollbar-thumb:hover {
+  background: #34455e;
 }
 
 @screen lg {

@@ -1,11 +1,10 @@
-import cn from 'clsx'
 import Image from 'next/image'
 import s from './ProductView.module.css'
 import { FC } from 'react'
 import type { Product } from '@commerce/types/product'
 import { WishlistButton } from '@components/wishlist'
-import { ProductCard, ProductSlider } from '@components/product'
-import { Container, Text } from '@components/ui'
+import { ProductSlider } from '@components/product'
+import { Container } from '@components/ui'
 import { SEO } from '@components/common'
 import ProductSidebar from '../ProductSidebar'
 
@@ -18,31 +17,32 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
   return (
     <>
       <Container className="max-w-none w-full" clean>
-        <div className={cn(s.root, 'fit')}>
+        {/* <div className={cn(s.root, 'fit')}> */}
+        <div className="flex mt-20 flex-wrap lg:flex-nowrap">
           <ProductSidebar
             key={product.id}
             product={product}
             className={s.sidebar}
           />
 
-          <div className={cn(s.main, 'fit')}>
-            <div className={s.sliderContainer}>
-              <ProductSlider key={product.id}>
-                {product.images.map((image, i) => (
-                  <div key={image.url} className={s.imageContainer}>
-                    <Image
-                      className={s.img}
-                      src={image.url!}
-                      alt={image.alt || 'Product Image'}
-                      width={600}
-                      height={600}
-                      priority={i === 0}
-                      quality="85"
-                    />
-                  </div>
-                ))}
-              </ProductSlider>
-            </div>
+          {/* <div className={cn(s.main, 'fit')}>
+            <div className={s.sliderContainer}> */}
+          <div className="px-8">
+            <ProductSlider key={product.id}>
+              {product.images.map((image, i) => (
+                <div key={image.url} className={s.imageContainer}>
+                  <Image
+                    className={s.img}
+                    src={image.url!}
+                    alt={image.alt || 'Product Image'}
+                    width={600}
+                    height={600}
+                    priority={i === 0}
+                    quality="85"
+                  />
+                </div>
+              ))}
+            </ProductSlider>
             {process.env.COMMERCE_WISHLIST_ENABLED && (
               <WishlistButton
                 className={s.wishlistButton}
@@ -52,8 +52,8 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
             )}
           </div>
         </div>
-        <hr className="mt-7 border-accent-2" />
-        <section className="py-12 px-6 mb-10">
+        {/* <hr className="mt-7 border-accent-2" /> */}
+        {/* <section className="py-12 px-6 mb-10">
           <Text variant="sectionHeading">Related Products</Text>
           <div className={s.relatedProductsGrid}>
             {relatedProducts.map((p) => (
@@ -75,7 +75,7 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
               </div>
             ))}
           </div>
-        </section>
+        </section> */}
       </Container>
       <SEO
         title={product.name}

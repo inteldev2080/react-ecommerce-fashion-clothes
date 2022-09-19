@@ -1,7 +1,7 @@
 import cn from 'clsx'
 import React, { FC, ReactNode, useState } from 'react'
 import s from './Collapse.module.css'
-import { ChevronRight } from '@components/icons'
+import { ChevronRight, Plus, Minus } from '@components/icons'
 import { useSpring, a } from '@react-spring/web'
 import useMeasure from 'react-use-measure'
 
@@ -30,9 +30,11 @@ const Collapse: FC<CollapseProps> = ({ title, children }) => {
       aria-expanded={isActive}
       onClick={toggle}
     >
-      <div className={s.header}>
-        <ChevronRight className={cn(s.icon, { [s.open]: isActive })} />
+      {/* <div className={s.header}> */}
+      <div className="flex justify-between">
         <span className={s.label}>{title}</span>
+        {/* <Plus className={cn(s.icon, { [s.open]: isActive })} /> */}
+        {isActive ? <Minus /> : <Plus />}
       </div>
       <a.div style={{ overflow: 'hidden', ...animProps }}>
         <div ref={ref} className={s.content}>
