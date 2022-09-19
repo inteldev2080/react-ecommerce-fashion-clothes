@@ -1,14 +1,12 @@
-import cn from 'clsx'
 import Image from 'next/image'
 import s from './ProductView.module.css'
 import { FC } from 'react'
 import type { Product } from '@commerce/types/product'
 import { WishlistButton } from '@components/wishlist'
-import { ProductCard, ProductSlider } from '@components/product'
-import { Container, Text } from '@components/ui'
+import { ProductSlider } from '@components/product'
+import { Container } from '@components/ui'
 import { SEO } from '@components/common'
 import ProductSidebar from '../ProductSidebar'
-import ICON_P_2 from '../../../public/icon_P_2.png'
 
 interface ProductViewProps {
   product: Product
@@ -29,7 +27,7 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
 
           {/* <div className={cn(s.main, 'fit')}>
             <div className={s.sliderContainer}> */}
-          <div className="h-[1997px] overflow-scroll px-8">
+          <div className="px-8">
             <ProductSlider key={product.id}>
               {product.images.map((image, i) => (
                 <div key={image.url} className={s.imageContainer}>
@@ -55,9 +53,6 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
           </div>
         </div>
         {/* <hr className="mt-7 border-accent-2" /> */}
-        <div className={s.bottomMainLogo}>
-          <Image src={ICON_P_2} alt="ICON_P_2" />
-        </div >
         {/* <section className="py-12 px-6 mb-10">
           <Text variant="sectionHeading">Related Products</Text>
           <div className={s.relatedProductsGrid}>

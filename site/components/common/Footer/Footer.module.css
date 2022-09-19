@@ -1,31 +1,19 @@
 .root {
-  @apply text-secondary border-t border-accent-2 bg-secondary;
+  @apply pt-20 pb-9 text-secondary bg-secondary;
 }
 
-.link {
-  & > svg {
-    @apply transform duration-75 ease-linear;
+.heroFooter {
+    @apply pt-14 text-secondary bg-secondary;
+}
+
+.linksContainer {
+  @apply flex space-x-16;
+
+  .list {
+    @apply flex flex-col items-start space-y-4 mt-8;
+
+    a {
+      @apply pb-2 border-b-2 border-solid border-transparent transition-colors hover:border-primary;
+    }
   }
-
-  &:hover > svg {
-    @apply scale-110;
-  }
-}
-
-.onHoverLT, .onHoverCP{
-  width: fit-content;
-}
-.onHoverLT > a{
-  padding-bottom: 8px;
-}
-
-.onHoverCP > a{
-  padding-bottom: 8px;
-}
-
-.onHoverLT > a:hover{
-  border-bottom: 2px solid white;
-}
-.onHoverCP > a:hover{
-  border-bottom: 2px solid white;
 }

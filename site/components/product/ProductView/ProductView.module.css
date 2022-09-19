@@ -58,9 +58,6 @@
   }
 }
 
-
-.bottomMainLogo{
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row-reverse;
+.bottomMainLogo {
+  @apply mt-5 flex-row-reverse flex;
 }
