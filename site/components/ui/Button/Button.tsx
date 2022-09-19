@@ -36,7 +36,6 @@ const Button: React.FC<ButtonProps> = forwardRef((props, buttonRef) => {
     ...rest
   } = props
   const ref = useRef<typeof Component>(null)
-
   const rootClassName = cn(
     s.root,
     {

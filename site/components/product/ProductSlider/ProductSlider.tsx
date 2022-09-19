@@ -10,6 +10,7 @@ import cn from 'clsx'
 import { a } from '@react-spring/web'
 import s from './ProductSlider.module.css'
 import ProductSliderControl from '../ProductSliderControl'
+import Image from 'next/image'
 
 interface ProductSliderProps {
   children: React.ReactNode[]
@@ -78,10 +79,20 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
   const onNext = React.useCallback(() => slider.current?.next(), [slider])
 
   return (
-    <div className={cn(s.root, className)} ref={sliderContainerRef}>
-      <div
-        ref={ref}
-        className={cn(s.slider, { [s.show]: isMounted }, 'keen-slider')}
+    <div ref={sliderContainerRef}>
+
+      {children?.map((item: any, index: number) => {
+        return (
+          <div key={index} className="mb-[30px]">
+            <Image src={item.key} height="1400" width="1000" alt={item.key} />
+          </div>
+        )
+      })}
+
+      {/* <div className={cn(s.root, className)} ref={sliderContainerRef}> */}
+      {/* <div
+      ref={ref}
+    className={cn(s.slider, { [s.show]: isMounted }, 'keen-slider')}
       >
         {slider && <ProductSliderControl onPrev={onPrev} onNext={onNext} />}
         {Children.map(children, (child) => {
@@ -91,17 +102,16 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
               ...child,
               props: {
                 ...child.props,
-                className: `${
-                  child.props.className ? `${child.props.className} ` : ''
-                }keen-slider__slide`,
+                className: `${child.props.className ? `${child.props.className} ` : ''
+                  }keen-slider__slide`,
               },
             }
           }
           return child
         })}
-      </div>
+      </div> */}
 
-      <a.div className={s.album} ref={thumbsContainerRef}>
+      {/* <a.div className={s.album} ref={thumbsContainerRef}>
         {slider &&
           Children.map(children, (child, idx) => {
             if (isValidElement(child)) {
@@ -121,7 +131,7 @@ const ProductSlider: React.FC<ProductSliderProps> = ({
             }
             return child
           })}
-      </a.div>
+      </a.div> */}
     </div>
   )
 }

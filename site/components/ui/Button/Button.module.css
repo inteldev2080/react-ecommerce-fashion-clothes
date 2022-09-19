@@ -65,10 +65,10 @@
 .disabled,
 .disabled:hover {
   @apply text-accent-4 border-accent-2 bg-accent-1 cursor-not-allowed;
-  filter: grayscale(1);
-  -webkit-transform: translateZ(0);
-  -webkit-perspective: 1000;
   -webkit-backface-visibility: hidden;
+  filter: grayscale(1);
+  -webkit-perspective: 1000;
+  -webkit-transform: translateZ(0);
 }
 
 .progress {
