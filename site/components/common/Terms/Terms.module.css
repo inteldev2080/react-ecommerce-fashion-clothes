@@ -1,0 +1,43 @@
+.mainContainer{
+    margin:82px 36px 60px 36px;
+}
+
+.title{
+    font-size: 28px;
+    line-height: 32px;
+    color: #000000;
+}
+
+.EffectiveDate{
+    font-size: 16px;
+    line-height: 31px;
+    color: #2F3134;
+}
+
+.contentsTitle{
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.contentsSubTitle2{
+    margin: 42px 0 0 10px;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+}
+
+.contentsP{
+    font-size: 16px;
+    line-height: 31px;
+    color: #2F3134; 
+}
+
+.dotDummy{
+    height: 5px;
+    width: 5px;
+    border-radius: 50%;
+    background-color: black;
+    display: inline-block;
+    margin: 2px 12px 2px 0;
+}

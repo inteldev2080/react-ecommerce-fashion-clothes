@@ -83,7 +83,7 @@ const Footer: FC<Props> = ({ className, pages }) => {
           <div className="mt-5 ml-12">
             <h3 className="text-lg">LEGAL TERMS AND CONDITIONS</h3>
             <div className={`${s.onHoverLT} flex flex-col gap-8 text-sm`}>
-              <a className="mt-8" href="">Legal Notice</a>
+              <a className="mt-8" href="/terms&condition">Legal Notice</a>
               <a href="">Privacy Policy</a>
               <a href="">Cookie Policy</a>
             </div>
