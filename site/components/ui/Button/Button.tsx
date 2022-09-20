@@ -8,7 +8,6 @@ import React, {
 import { mergeRefs } from 'react-merge-refs'
 import s from './Button.module.css'
 import { LoadingDots } from '@components/ui'
-import { Plus } from '@components/icons'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   href?: string
@@ -39,7 +38,6 @@ const Button: React.FC<ButtonProps> = forwardRef((props, buttonRef) => {
   const ref = useRef<typeof Component>(null)
   const rootClassName = cn(
     s.root,
-    s.buttonTextDecoration,
     {
       [s.ghost]: variant === 'ghost',
       [s.slim]: variant === 'slim',
@@ -64,7 +62,6 @@ const Button: React.FC<ButtonProps> = forwardRef((props, buttonRef) => {
       }}
       {...rest}
     >
-
       {children}
       {loading && (
         <i className="pl-2 m-0 flex">

@@ -3,7 +3,7 @@ import { useAddItem } from '@framework/cart'
 import { FC, useEffect, useState } from 'react'
 import { ProductOptions } from '@components/product'
 import type { Product } from '@commerce/types/product'
-import { Button, Collapse, Text, useUI } from '@components/ui'
+import { Button, useUI } from '@components/ui'
 import {
   getProductVariant,
   selectDefaultOptionFromProduct,
@@ -12,8 +12,9 @@ import {
 import ProductTag from '@components/product/ProductTag'
 import usePrice from '@framework/product/use-price'
 import Image from 'next/image'
-import ICON_P_1 from '../../../public/icon_P_1.png'
+import fashionOutlined from '../../../public/icon_P_1.png'
 import { Plus } from '@components/icons'
+
 interface ProductSidebarProps {
   product: Product
   className?: string
@@ -54,8 +55,8 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
   return (
     <div className="flex w-full">
       <div className={s.mainLogo}>
-        <Image src={ICON_P_1} alt="ICON_P_1" />
-      </div >
+        <Image src={fashionOutlined} alt="ICON_P_1" />
+      </div>
 
       {/* <div className={className}> */}
 
@@ -69,7 +70,9 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
         <div className="mt-6 flex gap-4">
           {product.tags?.map((item: any, index: number) => {
             return (
-              <div key={index} className={s.productTags}>{item}</div>
+              <div key={index} className={s.productTags}>
+                {item}
+              </div>
             )
           })}
         </div>
@@ -100,9 +103,13 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
               loading={loading}
               disabled={variant?.availableForSale === false}
             >
-              {variant?.availableForSale === false
-                ? 'Not Available'
-                : <><Plus className="h-10 w-10" /> Add To Cart</>}
+              {variant?.availableForSale === false ? (
+                'Not Available'
+              ) : (
+                <>
+                  <Plus className="h-10 w-10" /> Add To Cart
+                </>
+              )}
             </Button>
           )}
         </div>
@@ -111,16 +118,10 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
             <h3 className={s.heading}>Size Guide</h3>
           </div>
           <div className="mt-12 w-60">
-            Fits true to size. We recommend that you take your normal size.
-
-            Take the next size up if you wish to achieve a looser fit.
-
-            Model wears size Medium.  measurements are:
-
-            Height 6’1″ (186cm);
-            Chest 38″ (96cm);
-            Waist 32″(81.5cm);
-            Suit 38L.
+            Fits true to size. We recommend that you take your normal size. Take
+            the next size up if you wish to achieve a looser fit. Model wears
+            size Medium. measurements are: Height 6’1″ (186cm); Chest 38″
+            (96cm); Waist 32″(81.5cm); Suit 38L.
           </div>
         </div>
         <div className="mt-14 w-60">
@@ -128,15 +129,8 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
             <h3 className={s.heading}>Fabric Technology</h3>
           </div>
           <div className="mt-12">
-            NYLON STRETCH
-
-            (98% PA, 2% EL)
-
-            Water repellent, breathable
-
-            Fabric made in USA
-
-            Military specification
+            NYLON STRETCH (98% PA, 2% EL) Water repellent, breathable Fabric
+            made in USA Military specification
           </div>
         </div>
         <div className="mt-14 w-60">
@@ -144,11 +138,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
             <h3 className={s.heading}>Subsytems</h3>
           </div>
           <div className="mt-12">
-            JacketSlingǽ
-
-            Pockets: 4
-            _External: 2
-            _Internal: 2
+            JacketSlingǽ Pockets: 4 _External: 2 _Internal: 2
           </div>
         </div>
         <div className="mt-14 w-60">
@@ -156,18 +146,14 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
             <h3 className={s.heading}>Shipping & Returns</h3>
           </div>
           <div className="mt-12">
-            READY TO SHIP.
-            PRODUCTS ARE LIMITED STOCK.
-            ALL SALES ARE FINAL.
+            READY TO SHIP. PRODUCTS ARE LIMITED STOCK. ALL SALES ARE FINAL.
           </div>
         </div>
         <div className="mt-14">
           <div className="flex items-center">
             <h3 className={s.heading}>Includes</h3>
           </div>
-          <div className="mt-12 w-60">
-            JacketSlingǽ [ Removable ]
-          </div>
+          <div className="mt-12 w-60">JacketSlingǽ [ Removable ]</div>
         </div>
       </div>
     </div>

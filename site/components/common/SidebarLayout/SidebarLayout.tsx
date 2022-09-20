@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
-import { Cross, ChevronLeft } from '@components/icons'
+import { ChevronLeft, Cross } from '@components/icons'
 import { UserNav } from '@components/common'
 import cn from 'clsx'
 import s from './SidebarLayout.module.css'
 
-type ComponentProps = { className?: string } & (
+type ComponentProps = { className?: string; children?: React.ReactNode } & (
   | { handleClose: () => any; handleBack?: never }
   | { handleBack: () => any; handleClose?: never }
 )

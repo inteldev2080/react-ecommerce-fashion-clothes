@@ -1,10 +1,10 @@
 import cn from 'clsx'
-import { FC, ReactNode, Component } from 'react'
+import { FC, ReactNode } from 'react'
 import s from './Grid.module.css'
 
 interface GridProps {
   className?: string
-  children?: ReactNode[] | Component[] | any[]
+  children?: ReactNode | ReactNode[] | any[]
   layout?: 'A' | 'B' | 'C' | 'D' | 'normal'
   variant?: 'default' | 'filled'
 }

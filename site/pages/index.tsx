@@ -1,10 +1,11 @@
 import commerce from '@lib/api/commerce'
 import { ProductCard } from '@components/product'
-import { Grid, Hero } from '@components/ui'
+import { Grid } from '@components/ui'
 // import HomeAllProductsGrid from '@components/common/HomeAllProductsGrid'
 import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 import HeroNav from '@components/common/HeroNav'
 import { LayoutNoNavbar } from '@components/common/Layout/Layout'
+import { HeroFooter } from '@components/common/Footer'
 
 export async function getStaticProps({
   preview,
@@ -64,6 +65,7 @@ export default function Home({
         categories={categories}
         brands={brands}
       /> */}
+      <HeroFooter />
     </>
   )
 }

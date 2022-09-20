@@ -45,8 +45,8 @@ module.exports = {
         secondary: 'var(--text-secondary)',
       },
       fontSize: {
-        '64xl': '64px',
-        '36xl': '36px',
+        '64xl': '4rem',
+        '36xl': '2.25rem',
       },
       boxShadow: {
         'outline-normal': '0 0 0 2px var(--accent-2)',

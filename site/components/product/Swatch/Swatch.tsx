@@ -4,6 +4,7 @@ import s from './Swatch.module.css'
 import { Check } from '@components/icons'
 import Button, { ButtonProps } from '@components/ui/Button'
 import { isDark } from '@lib/colors'
+
 interface SwatchProps {
   active?: boolean
   children?: any
@@ -37,7 +38,7 @@ const Swatch: React.FC<Omit<ButtonProps, 'variant'> & SwatchProps> = ({
       [s.dark]: color ? isDark(color) : false,
       [s.textLabel]: !color && label && label.length > 3,
     },
-    s.reactangleDesign,
+    s.rectangleDesign,
     className
   )
 
