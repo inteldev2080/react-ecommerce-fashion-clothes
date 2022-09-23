@@ -1,0 +1,15 @@
+.mainContainer{
+    @apply mt-20 mx-9 mb-14;
+}
+
+.title{
+    @apply text-[28px] leading-8 text-black;
+}
+
+.spacingTopAndBottom{
+    @apply my-8;
+}
+
+.spacingOnlyTop{
+    @apply mt-8;
+}

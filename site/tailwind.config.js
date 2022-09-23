@@ -47,6 +47,7 @@ module.exports = {
       fontSize: {
         '64xl': '4rem',
         '36xl': '2.25rem',
+        '16xl': '1rem',
       },
       boxShadow: {
         'outline-normal': '0 0 0 2px var(--accent-2)',

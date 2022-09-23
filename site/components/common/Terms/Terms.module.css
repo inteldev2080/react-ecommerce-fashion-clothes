@@ -1,43 +1,39 @@
 .mainContainer{
-    margin:82px 36px 60px 36px;
+    @apply mt-20 mx-9 mb-14;
+}
+
+.spacingTop{
+    @apply mt-8;
+}
+
+.spacingRight{
+    @apply mr-10;
+}
+
+.spacingRightAndLeft{
+    @apply ml-2 mr-8;
 }
 
 .title{
-    font-size: 28px;
-    line-height: 32px;
-    color: #000000;
+    @apply text-[28px] leading-8 text-black;
 }
 
-.EffectiveDate{
-    font-size: 16px;
-    line-height: 31px;
-    color: #2F3134;
+.effectiveDate{
+    @apply text-[16px] leading-8 text-[#2F3134];
 }
 
 .contentsTitle{
-    font-size: 24px;
-    line-height: 24px;
-    color: #000000;
+    @apply text-2xl leading-6 text-black;
 }
 
 .contentsSubTitle2{
-    margin: 42px 0 0 10px;
-    font-size: 18px;
-    line-height: 21px;
-    color: #000000;
+    @apply mt-11 ml-2.5 text-lg leading-5 text-black;
 }
 
-.contentsP{
-    font-size: 16px;
-    line-height: 31px;
-    color: #2F3134; 
+.content{
+    @apply mt-8 text-[16px] leading-8 text-[#2F3134];
 }
 
 .dotDummy{
-    height: 5px;
-    width: 5px;
-    border-radius: 50%;
-    background-color: black;
-    display: inline-block;
-    margin: 2px 12px 2px 0;
+    @apply w-1 h-1 rounded-full bg-black inline-block my-0.5 mr-3;
 }

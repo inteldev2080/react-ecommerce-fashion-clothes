@@ -1,0 +1,40 @@
+.mainContainer{
+    @apply mt-20 mx-9 mb-14;
+}
+
+.title{
+    @apply text-[28px] leading-8 text-black;
+}
+
+.containerCookiePolicy{
+    @apply my-9 text-sm leading-8 text-black;
+}
+
+.spacingTopAndBottom{
+    @apply my-8;
+}
+
+.spacingOnlyTop{
+    @apply mt-8;
+}
+
+.subHeading{
+    @apply mt-16 ml-3 text-lg font-semibold;
+}
+
+.fontBold{
+    @apply font-semibold;
+}
+
+.dot{
+    @apply w-1 h-1 rounded-full bg-black inline-block my-0.5 ml-3 mr-3;
+}
+
+
+.emailSection{
+    @apply flex gap-[82px];
+}
+
+.postalAddressSection{
+    @apply flex gap-8;
+}
