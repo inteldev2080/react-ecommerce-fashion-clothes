@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Repair.module.css';
+import s from '../../../assets/terms.module.css';
 
 const Repair = () => {
     return (

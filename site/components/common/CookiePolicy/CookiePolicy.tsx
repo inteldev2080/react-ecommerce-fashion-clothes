@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './CookiePolicy.module.css';
+import s from '../../../assets/terms.module.css';
 
 const CookiePolicy = () => {
     return (
@@ -48,21 +48,21 @@ const CookiePolicy = () => {
                 <p className={s.spacingOnlyTop}>
                     <span className={s.fontBold}>How does fashion³ use cookies?</span><br />
                     When you access the fashion³ website, view or interact with our content or otherwise communicate with us digitally, fashion³ , our affiliates and our partners use cookies, web beacons and similar technologies to:<br />
-                    <span className={s.dot} />
+                    <span className={s.dotShapeOfCookieSection} />
                     understand the behavior of users to the fashion³ s website;<br />
-                    <span className={s.dot} />
+                    <span className={s.dotShapeOfCookieSection} />
                     track which parts of the fashion³ website people have visited;<br />
-                    <span className={s.dot} />
+                    <span className={s.dotShapeOfCookieSection} />
                     understand the profile of the users of the fashion³ website;<br />
-                    <span className={s.dot} />
+                    <span className={s.dotShapeOfCookieSection} />
                     make our fashion³ website as convenient and personal as possible, for example by keeping you signed in;<br />
-                    <span className={s.dot} />
+                    <span className={s.dotShapeOfCookieSection} />
                     provide certain services that require the use of cookies such as using an online shopping basket;<br />
-                    <span className={s.dot} />
+                    <span className={s.dotShapeOfCookieSection} />
                     measure the effectiveness of our online advertising or how often our content is viewed;<br />
-                    <span className={s.dot} />
+                    <span className={s.dotShapeOfCookieSection} />
                     determine which email messages were opened, whether you clicked on any links and interacted with the content and to optimize your email experience;<br />
-                    <span className={s.dot} />
+                    <span className={s.dotShapeOfCookieSection} />
                     analyze your information including your location, products and/or services requested, age, time zone, IP address and URL visited, against our wider customer base for internal business purposes, such as generating statistics and developing marketing plans, to improve our services and products, the fashion³  website and content. We may also aggregate and de-identify your information to create customer segments and share with our licensees and partners.
                 </p>
                 <p className={s.spacingOnlyTop}>
@@ -128,10 +128,10 @@ const CookiePolicy = () => {
                     If you have any questions regarding our Policy or how we handle your information, please contact us either:
                 </p>
                 <div>
-                    <div className={s.emailSection}>
+                    <div className={s.emailSectionCookie}>
                         <label>E-mail:</label><p>hello@fashion3.io</p>
                     </div>
-                    <div className={s.postalAddressSection}>
+                    <div className={s.postalAddressSectionCookie}>
                         <label>Postal Address:</label><p>FASHIONCUBED LLC, Attn: Privacy Issues, 7014 13th avenue suite 202, Brooklyn, NY, United States, 11228</p>
                     </div>
                 </div>

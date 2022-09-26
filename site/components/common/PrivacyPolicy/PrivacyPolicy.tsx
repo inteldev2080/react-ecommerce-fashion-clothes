@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './PrivacyPolicy.module.css';
+import s from '../../../assets/terms.module.css';
 
 const PrivacyPolicy = () => {
     return (
@@ -78,47 +78,47 @@ const PrivacyPolicy = () => {
                     <h5>2.  HOW DOES FASHION³ USE MY PERSONAL INFORMATION?</h5>
                     <p className="mt-3.5 mb-4">We will use your personal information for the purposes set out in this Policy, which will include:</p>
                     <p className="ml-3">
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         To provide you with the products and services that you have requested - To administer our relationship with you and to carry out our obligations arising from the relationship between you and us, including internal accounting and administration purposes, to process payment for purchases or other services and to create and manage your account.<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         To process your payments - After you place an order on our website you will need to make payment for the goods or services you have ordered. Your payment will be processed by Shopify Payments. Shopify Payments collects, uses and processes your information, including payment information, in accordance with their privacy policies. You can access their privacy policy via the following link(s): Shopify Payments: https://www.shopify.com/legal/privacy. If you elect the Afterpay service, Afterpay collects, uses and processes your information, including payment information, in accordance with its privacy policies. You can access Afterpay’s privacy policy via the following link: https://www.afterpay.com/privacy-policy.<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         To verify your identity - For example we may use your email address to determine if you already have an account with us.<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         For analytics purposes - For example, we may analyze your personal information including your location, products and/or services requested, age, time zone, IP address and URL visited, against our wider customer base for internal business purposes, such as generating statistics and developing marketing plans, to improve our services and products and the website. We may also aggregate and de-identify your information to create customer segments and share with our affiliates and partners.<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         We also use Google, a third-party analytics provider, to collect information about websites usage and the users of the websites, including demographic and interest-level information. Google uses cookies in order to collect demographic and interest-level information and usage information from users that visit the websites, including information about the pages where users enter and exit the websites and what pages users view on the websites, time spent, browser, operating system, and IP address. Cookies allow Google to recognize a user when a user visits the websites and when the user visits other websites. Google uses the information it collects from the websites and other websites to share with us and other website operators’ information about users including age range, gender, geographic regions, general interests, and details about devices used to visit websites and purchase items. We do not link information we receive from Google with any of your personally identifiable information. For more information regarding Google’s use of cookies, and collection and use of information, see the Google privacy policy (available at https://policies.google.com/privacy?hl=en). If you would like to opt out of Google Analytics tracking, please visit the Google Analytics Opt-out Browser Add-on (available at https://tools.google.com/dlpage/gaoptout).<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         To provide you with marketing communications that you might be interested in - If you choose to receive marketing communications from us, we may use your personal information to keep you up to date with our latest products, services, surveys, announcements, upcoming events, sweepstakes, contests and other promotions via our newsletters, emails, or other communications. If you no longer wish to receive these marketing communications, details of how to opt out are described in the section below marked “How do I stop receiving marketing communications?".<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         For tailored advertising - We, or with third party vendors, may use your personal information to provide you with tailored advertising on third party sites, including Social Sites (defined below in section 8 “What if I access or use a social network or public forum through fashion3.io?”. These advertisements are either: (i) “contextual" (meaning they are presented due to the webpage that you are viewing); or (ii) “behavioral advertising" or “interest-based advertising" (i.e. where advertisements are shown to you based upon your interests which we have inferred from your information including demographic, geographic and interest-based data). We may use tailored advertising to specifically include or exclude individuals who have registered for our products to ensure that you are provided with information about those products that are most relevant to you. To do this, we may track your browsing activity across different websites, different Devices and/or different applications. We may match your browsing activity on one Device, such as your mobile phone, with your browsing activity on another Device, such as your tablet, to ensure our advertising is tailored to you. If you no longer wish to see tailored advertising, you can amend your cookie preferences as referenced in our Cookie Notice. In addition, some third party sites allow you to stop seeing advertisements from specific advertisers on that site, so you should also check your preferences on those websites.<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         If you would like more information about Advertisers’ practices, please see http://optout.aboutads.info/#!/. You can generally opt-out of receiving personalized ads from third-party advertisers and ad networks who are members of the Network Advertising Initiative (NAI) or who follow the Digital Advertising Alliance’s Self-Regulatory Principles for Online Behavioral Advertising (DAA) by visiting the opt-out pages on the NAI website (http://optout.networkadvertising.org) and DAA website (http://www.aboutads.info/choices/).<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         For SMS communications - When you sign up to receive text messages from us on our website or via text message or opt to receive news, offers, updates on out-of-stock items from us by entering your name and phone number and clicking subscribe or ticking a box at checkout indicating that you would like to receive text messages from us, we collect your phone number, information about your browser, information about the page you signed up on, and any other additional information you may provide to us. For more information on SMS messages, including instructions on how to opt-out, please read our Terms of Use.<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         For non-marketing communications - We may use your personal information to communicate with you about important information in relation to your account, the service you have requested or other non-marketing communications. This includes: (i) emailing you to verify your identity when you sign-up; (ii) emailing you where you have requested a password and/or username reset; (iii) notifying you that a particular service has been suspended for maintenance or terminated; (iv) letting you know that we have updated this Policy or our Terms of Use; or (v) letting you know about any products that you have requested or purchased. We will never contact you to ask for your password, please be careful if you receive any communications from people requesting this information.<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         To provide the best service to our customers - For example, we may use your personal information to process and respond to your questions and/or inquiries.<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         For site optimization and management - For example we may use your personal information provided to us to:<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         administer the website;<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         ensure the security of our networks and of your information;<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         customize your future visits to the website based on your interests to ensure the most user-friendly online navigation experience;<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         improve the website and our other digital offerings (including to fix operational problems such as pages crashing and software bugs); and<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         provide services to our partners such as tools, analyses, data and insights to see how their website or mobile applications are used.<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         For product development and business development purposes - For example, we will use information we collect from you to improve our products and develop new products.<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         For fraud prevention and detection purposes and to protect and defend the rights and property of fashion³, our employees and business partners.<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         For employment application purposes - For example, if you contact us in relation to your employment prospects, we will use your personal information to consider you for current and future employment opportunities and to contact you with respect to employment opportunities at fashion³ that you have expressed an interest in.<br />
-                        <span className={s.dot} />
+                        <span className={s.dotShapeOfPrivacySection} />
                         Use of Non-Personally Identifiable Information
                     </p>
                     <p className={s.spacingTopSection2}>
@@ -411,10 +411,10 @@ const PrivacyPolicy = () => {
                     </p>
                 </div>
                 <div>
-                    <div className={s.emailSection}>
+                    <div className={s.emailSectionPrivacy}>
                         <label>E-mail:</label><p>hello@fashion3.io</p>
                     </div>
-                    <div className={s.postalAddressSection}>
+                    <div className={s.postalAddressSectionPrivacy}>
                         <label>Postal Address:</label><p>FASHIONCUBED LLC, Attn: California Privacy Rights, 7014 13th avenue suite 202, Brooklyn, NY, United States, 11228</p>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Terms.module.css';
+import s from '../../../assets/terms.module.css';
 
 const Terms = () => (
     <div className={s.mainContainer}>
@@ -11,19 +11,19 @@ const Terms = () => (
                 Effective date: September 30 2022
             </p>
 
-            <p className={s.spacingTop}>
+            <p className={s.spacingOnlyTop}>
                 PLEASE READ THESE TERMS OF SALE CAREFULLY BEFORE ORDERING PRODUCTS ONLINE FROM WWW.FASHION3.IO. PLEASE NOTE THAT THESE TERMS OF SALE INCLUDE THE ADDITIONAL TERMS INCORPORATED HEREIN BY REFERENCE. If you think that there is a mistake in these terms, please contact us.
             </p>
 
-            <p className={s.spacingTop}>
+            <p className={s.spacingOnlyTop}>
                 These Terms of Sale govern how we supply products to you, our loyal customer. These Terms of Sale create a legally binding agreement between you and fasshioncubed LLC (“fashion³”, “we” or “us”) located at 7014 13th avenue suite 202, Brooklyn, NY, United States, 11228.
             </p>
 
-            <p className={s.spacingTop}>
+            <p className={s.spacingOnlyTop}>
                 We may revise these Terms of Sale without prior notice by posting revised Terms of Sale on the site.  The Terms of Sale posted on www.fashion3.io at the time you place your order will govern that purchase.  Please read these terms carefully and check that the details of your order are complete and accurate before submitting your order. fashion³ of Use are incorporated herein by this reference. Please refer to our Privacy Policy for information about how we collect, use and disclose information about you.
             </p>
         </div>
-        <div className={s.spacingTop}>
+        <div className={s.spacingOnlyTop}>
             <h4 className={s.contentsTitle}>CONTENTS</h4>
             <div>
                 <p className={s.contentsSubTitle2}>1. TERMS AND DEFINITIONS</p>
@@ -73,21 +73,21 @@ const Terms = () => (
                 </p>
                 <p className={s.content}>
                     <span className={s.spacingRight}>5.5</span>If we are unable to accept your order, we will inform you of this via email and will not charge you for the product. If we have taken payment prior to non-acceptance of your order then we will refund you, but please note that it can take up to 7 business days for the bank to transfer the funds to you. Non acceptance of an order may be because:<br />
-                    <span className={s.spacingRightAndLeft}><span className={s.dotDummy} />(a)</span>
+                    <span className={s.spacingRightAndLeft}><span className={s.dotShapeOfTermsSection} />(a)</span>
                     the product is out of stock;<br />
-                    <span className={s.spacingRightAndLeft}><span className={s.dotDummy} />(b)</span>
+                    <span className={s.spacingRightAndLeft}><span className={s.dotShapeOfTermsSection} />(b)</span>
                     we were unable to authorize your payment or your billing information is not verifiable;<br />
-                    <span className={s.spacingRightAndLeft}><span className={s.dotDummy} />(c)</span>
+                    <span className={s.spacingRightAndLeft}><span className={s.dotShapeOfTermsSection} />(c)</span>
                     because of unexpected limits on our resources which we could not reasonably plan for;<br />
-                    <span className={s.spacingRightAndLeft}><span className={s.dotDummy} />(d)</span>
+                    <span className={s.spacingRightAndLeft}><span className={s.dotShapeOfTermsSection} />(d)</span>
                     an error in the price or description of the product;<br />
-                    <span className={s.spacingRightAndLeft}><span className={s.dotDummy} />(e)</span>
+                    <span className={s.spacingRightAndLeft}><span className={s.dotShapeOfTermsSection} />(e)</span>
                     in our sole discretion, the order appears to be placed by dealers, resellers or distributors or otherwise appears fraudulent;<br />
-                    <span className={s.spacingRightAndLeft}><span className={s.dotDummy} />(f)</span>
+                    <span className={s.spacingRightAndLeft}><span className={s.dotShapeOfTermsSection} />(f)</span>
                     your order is flagged by our security systems as an unusual order or an order susceptible to fraud;<br />
-                    <span className={s.spacingRightAndLeft}><span className={s.dotDummy} />(g)</span>
+                    <span className={s.spacingRightAndLeft}><span className={s.dotShapeOfTermsSection} />(g)</span>
                     we could not deliver to the address provided by you; or<br />
-                    <span className={s.spacingRightAndLeft}><span className={s.dotDummy} />(h)</span>
+                    <span className={s.spacingRightAndLeft}><span className={s.dotShapeOfTermsSection} />(h)</span>
                     due to an event outside of our control (see below).<br />
                 </p>
                 <p className={s.content}>
