@@ -1,0 +1,111 @@
+.mainContainer {
+  @apply container mt-20 mx-auto px-9 mb-14;
+}
+
+.title {
+  @apply text-[28px] leading-8 text-black;
+}
+
+.containerCookiePolicy,
+.containerPrivacyPolicy {
+  @apply my-9 text-sm leading-8 text-black;
+}
+
+.spacingTopAndBottom {
+  @apply my-8;
+}
+
+.spacingOnlyTop {
+  @apply mt-8;
+}
+
+.subHeading {
+  @apply mt-16 ml-3 text-lg font-semibold;
+}
+
+.fontBold {
+  @apply font-semibold;
+}
+
+.dotShapeOfTermsSection,
+.dotShapeOfPrivacySection {
+  @apply w-1 h-1 rounded-full bg-black inline-block my-0.5 mr-3;
+}
+
+.dotShapeOfCookieSection {
+  @apply w-1 h-1 rounded-full bg-black inline-block my-0.5 ml-3 mr-3;
+}
+
+.emailSectionCookie {
+  @apply flex gap-[82px];
+}
+
+.postalAddressSectionCookie {
+  @apply flex gap-8;
+}
+
+.emailSectionPrivacy {
+  @apply mt-14 text-sm flex gap-[90px];
+}
+
+.postalAddressSectionPrivacy {
+  @apply mt-8 text-sm flex gap-8;
+}
+
+.spacingTopSection2 {
+  @apply mt-8  leading-7;
+}
+
+.commonSection {
+  @apply text-sm leading-7;
+}
+
+.section2 {
+  @apply text-sm leading-10;
+}
+
+.section1 h5,
+.section2 h5,
+.commonSection h5 {
+  @apply mt-5 text-[16px];
+}
+
+.section1 {
+  @apply text-sm leading-8;
+}
+
+.containerTermsandDefination h4 {
+  @apply text-lg leading-5 ml-3;
+}
+
+.containerTermsandDefination {
+  @apply mt-24;
+}
+
+.subHeadingAndspacingTop {
+  @apply mt-8 font-semibold;
+}
+
+.spacingRight {
+  @apply mr-10;
+}
+
+.spacingRightAndLeft {
+  @apply ml-2 mr-8;
+}
+
+.effectiveDate {
+  @apply text-[16px] leading-8 text-f3-gray-61;
+}
+
+.contentsTitle {
+  @apply text-2xl leading-6 text-black;
+}
+
+.contentsSubTitle2 {
+  @apply mt-11 ml-2.5 text-lg leading-5 text-black;
+}
+
+.content {
+  @apply mt-8 text-base leading-8 text-f3-gray-61;
+}

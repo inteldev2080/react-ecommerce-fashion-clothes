@@ -43,10 +43,12 @@ module.exports = {
         base: 'var(--text-base)',
         primary: 'var(--text-primary)',
         secondary: 'var(--text-secondary)',
+        'f3-gray-61': 'var(--f3-gray-61)'
       },
       fontSize: {
         '64xl': '4rem',
         '36xl': '2.25rem',
+        '16xl': '1rem',
       },
       boxShadow: {
         'outline-normal': '0 0 0 2px var(--accent-2)',
