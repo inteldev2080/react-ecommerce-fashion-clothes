@@ -1,11 +1,11 @@
 import React from 'react';
 import { Layout } from '@components/common'
-import Cookie_Policy from '@components/common/CookiePolicy/CookiePolicy';
+import CookiePolicy from '@components/common/CookiePolicy/CookiePolicy';
 
-export default function CookiePolicy() {
+export default function CookiePolicyPage() {
     return (
-        <Cookie_Policy />
+        <CookiePolicy />
     )
 }
 
-CookiePolicy.Layout = Layout
+CookiePolicyPage.Layout = Layout

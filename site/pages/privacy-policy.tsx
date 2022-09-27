@@ -1,11 +1,11 @@
 import React from 'react';
 import { Layout } from '@components/common'
-import Privacy_Policy from '@components/common/PrivacyPolicy/PrivacyPolicy';
+import PrivacyPolicy from '@components/common/PrivacyPolicy/PrivacyPolicy';
 
-export default function PrivacyPolicy() {
+export default function PrivacyPolicyPage() {
     return (
-        <Privacy_Policy />
+        <PrivacyPolicy />
     )
 }
 
-PrivacyPolicy.Layout = Layout
+PrivacyPolicyPage.Layout = Layout
