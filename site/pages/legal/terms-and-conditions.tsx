@@ -1,11 +1,9 @@
-import React from 'react';
+import React from 'react'
 import { Layout } from '@components/common'
-import Terms from '@components/common/Terms/Terms';
+import { Terms } from '@components/legal/Terms'
 
 export default function TermsAndConditions() {
-    return (
-        <Terms />
-    )
+  return <Terms />
 }
 
 TermsAndConditions.Layout = Layout

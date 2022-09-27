@@ -1,5 +1,5 @@
 .mainContainer {
-  @apply mt-20 mx-9 mb-14;
+  @apply container mt-20 mx-auto px-9 mb-14;
 }
 
 .title {
@@ -59,6 +59,7 @@
 .commonSection {
   @apply text-sm leading-7;
 }
+
 .section2 {
   @apply text-sm leading-10;
 }
@@ -106,5 +107,5 @@
 }
 
 .content {
-  @apply mt-8 text-[16px] leading-8 text-f3-gray-61;
+  @apply mt-8 text-base leading-8 text-f3-gray-61;
 }
