@@ -94,7 +94,7 @@
 }
 
 .effectiveDate {
-  @apply text-[16px] leading-8 text-effectiveDateTextColor;
+  @apply text-[16px] leading-8 text-f3-gray-61;
 }
 
 .contentsTitle {
@@ -106,5 +106,5 @@
 }
 
 .content {
-  @apply mt-8 text-[16px] leading-8 text-effectiveDateTextColor;
+  @apply mt-8 text-[16px] leading-8 text-f3-gray-61;
 }
