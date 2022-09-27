@@ -24,9 +24,9 @@ const links: LinkSection[] = [
   {
     title: 'Legal Terms and Conditions',
     links: [
-      { name: 'Legal Notice', url: '/' },
-      { name: 'Privacy Policy', url: '/' },
-      { name: 'Cookie Policy', url: '/' },
+      { name: 'Legal Notice', url: '/legal/terms-and-conditions' },
+      { name: 'Privacy Policy', url: '/legal/privacy-policy' },
+      { name: 'Cookie Policy', url: '/legal/cookie-policy' },
     ],
   },
   {
@@ -34,7 +34,7 @@ const links: LinkSection[] = [
     links: [
       { name: 'Shipping', url: '/' },
       { name: 'Sizing', url: '/' },
-      { name: 'Repairs', url: '/' },
+      { name: 'Repairs', url: '/legal/repairs' },
     ],
   },
 ]

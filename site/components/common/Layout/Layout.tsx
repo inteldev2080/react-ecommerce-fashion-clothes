@@ -111,7 +111,7 @@ const Layout: React.FC<Props> = ({
   pageProps: { categories = [], ...pageProps },
 }) => {
   const { acceptedCookies, onAcceptCookies } = useAcceptCookies()
-  const { locale = 'en-US' } = useRouter()
+  const { locale = 'en-US', pathname } = useRouter()
   const navBarlinks = categories.slice(0, 2).map((c) => ({
     label: c.name,
     href: `/search/${c.slug}`,
@@ -121,7 +121,7 @@ const Layout: React.FC<Props> = ({
     <CommerceProvider locale={locale}>
       <div className={cn(s.root)}>
         {showNavbar && <Navbar links={navBarlinks} />}
-        <main className="fit">{children}</main>
+        <main className={pathname === "/repairs" ? "" : "fit"}>{children}</main>
         <Footer pages={pageProps.pages} />
         <ModalUI />
         <CheckoutProvider>
