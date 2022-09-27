@@ -43,7 +43,7 @@ module.exports = {
         base: 'var(--text-base)',
         primary: 'var(--text-primary)',
         secondary: 'var(--text-secondary)',
-        'effectiveDateTextColor': '#2F3134'
+        effectiveDateTextColor: 'var(--effectiveDateTextColor)'
       },
       fontSize: {
         '64xl': '4rem',
