@@ -27,6 +27,10 @@
 }
 
 .productName {
-  @apply font-medium cursor-pointer pb-1;
+  @apply font-medium cursor-pointer pb-1 flex items-center;
   margin-top: -4px;
+}
+
+.productName::after {
+  @apply content-[''] bg-secondary block h-2.5 w-2.5 ml-2.5;
 }

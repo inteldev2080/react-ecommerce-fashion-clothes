@@ -176,7 +176,7 @@ export default function Cart() {
                     </Button>
                   ) : (
                     <Button href="/checkout" Component="a" width="100%">
-                      Proceed to Checkout
+                      Safe To Checkout
                     </Button>
                   )}
                 </>

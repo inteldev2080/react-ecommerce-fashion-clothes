@@ -73,13 +73,13 @@ const CartSidebarView: FC = () => {
       ) : (
         <>
           <div className="px-4 sm:px-6 flex-1">
-            <Link href="/cart">
+            {/* <Link href="/cart">
               <a>
                 <Text variant="sectionHeading" onClick={handleClose}>
                   My Cart
                 </Text>
               </a>
-            </Link>
+            </Link> */}
             <ul className={s.lineItemsList}>
               {data!.lineItems.map((item: any) => (
                 <CartItem
@@ -91,7 +91,7 @@ const CartSidebarView: FC = () => {
             </ul>
           </div>
 
-          <div className="flex-shrink-0 px-6 py-6 sm:px-6 sticky z-20 bottom-0 w-full right-0 left-0 bg-accent-0 border-t text-sm">
+          <div className="flex-shrink-0 py-6 sticky z-20 bottom-0 mx-6 right-0 left-0 bg-accent-0 border-t border-black text-sm">
             <ul className="pb-2">
               <li className="flex justify-between py-1">
                 <span>Subtotal</span>
@@ -106,7 +106,7 @@ const CartSidebarView: FC = () => {
                 <span className="font-bold tracking-wide">FREE</span>
               </li>
             </ul>
-            <div className="flex justify-between border-t border-accent-2 py-3 font-bold mb-2">
+            <div className="flex justify-between border-t border-black py-3 font-bold mb-2">
               <span>Total</span>
               <span>{total}</span>
             </div>
@@ -116,8 +116,8 @@ const CartSidebarView: FC = () => {
                   Proceed to Checkout ({total})
                 </Button>
               ) : (
-                <Button href="/checkout" Component="a" width="100%">
-                  Proceed to Checkout
+                <Button href="/cart" Component="a" width="100%">
+                  Safe To Checkout
                 </Button>
               )}
             </div>

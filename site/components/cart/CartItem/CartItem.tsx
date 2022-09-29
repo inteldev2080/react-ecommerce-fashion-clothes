@@ -83,15 +83,16 @@ const CartItem = ({
       })}
       {...rest}
     >
-      <div className="flex flex-row space-x-4 py-4">
-        <div className="w-16 h-16 bg-violet relative overflow-hidden cursor-pointer z-0">
+      <div className="flex flex-row space-x-6 py-4">
+        {/* <div className="w-28 h-16 bg-violet relative overflow-hidden cursor-pointer z-0"> */}
+        <div>
           <Link href={`/product/${item.path}`}>
             <a>
               <Image
                 onClick={() => closeSidebarIfPresent()}
                 className={s.productImage}
-                width={150}
-                height={150}
+                width={140}
+                height={200}
                 src={item.variant.image?.url || placeholderImg}
                 alt={item.variant.image?.altText || "Product Image"}
                 unoptimized
@@ -108,16 +109,24 @@ const CartItem = ({
               >
                 {item.name}
               </span>
+
             </a>
           </Link>
+          {/* <div className="flex flex-col justify-between space-y-2 text-sm"> */}
+          <div className=''>
+            <span>{price}</span>
+          </div>
+          <div className='mt-6'>
+            <p>3L Gore-Tex Pro Jacket</p>
+          </div>
           {options && options.length > 0 && (
-            <div className="flex items-center pb-1">
+            <div className="flex items-center pb-1 mt-1.5">
               {options.map((option: ItemOption, i: number) => (
                 <div
                   key={`${item.id}-${option.name}`}
                   className="text-sm font-semibold text-accent-7 inline-flex items-center justify-center"
                 >
-                  {option.name}
+                  {option.name}:
                   {option.name === 'Color' ? (
                     <span
                       className="mx-2 rounded-full bg-transparent border w-5 h-5 p-1 text-accent-9 inline-flex items-center justify-center overflow-hidden"
@@ -135,23 +144,24 @@ const CartItem = ({
               ))}
             </div>
           )}
-          {variant === 'display' && (
+          {/* {variant === 'display' && (
             <div className="text-sm tracking-wider">{quantity}x</div>
-          )}
+          )} */}
+          <div className='mt-8'>
+            {variant === 'default' && (
+              <Quantity
+                value={quantity}
+                handleRemove={handleRemove}
+                handleChange={handleChange}
+                increase={() => increaseQuantity(1)}
+                decrease={() => increaseQuantity(-1)}
+              />
+            )}
+          </div>
         </div>
-        <div className="flex flex-col justify-between space-y-2 text-sm">
-          <span>{price}</span>
+        <div className="flex flex-col justify-between space-y-2 border-r-2 border-black">
         </div>
       </div>
-      {variant === 'default' && (
-        <Quantity
-          value={quantity}
-          handleRemove={handleRemove}
-          handleChange={handleChange}
-          increase={() => increaseQuantity(1)}
-          decrease={() => increaseQuantity(-1)}
-        />
-      )}
     </li>
   )
 }
