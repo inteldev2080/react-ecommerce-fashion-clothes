@@ -3,7 +3,7 @@ import s from './HeroNav.module.css'
 import { Navbar } from '@components/common'
 import cn from 'clsx'
 import { useState } from 'react'
-import Image from 'next/image'
+import Image from 'next/future/image'
 import { Button } from '@components/ui'
 import Link from 'next/link'
 
@@ -16,10 +16,8 @@ const ActiveProduct = ({ product }: { product: Product }) => {
         quality="85"
         src={product.images[0]?.url || placeholderImg}
         alt={product.name || 'Product Image'}
-        height={320}
-        width={320}
-        objectFit="contain"
-        objectPosition="right"
+        width={340}
+        height={340}
         className={s.activeImage}
       />
       <Link href={`/product/${product.slug}`}>
@@ -65,11 +63,18 @@ const HeroNav = ({ products }: Props): JSX.Element => {
       <div className={s.main}>
         {activeProduct && <ActiveProduct product={activeProduct} />}
         <Image
-          src="/hero.png"
-          layout="fill"
-          objectFit="contain"
-          objectPosition="right"
+          src="/fashion3-outline.png"
+          width={701}
+          height={171}
+          className={s.fashionImage}
+          alt="Fashion3"
+        />
+        <Image
+          src="/fw2022-hero.png"
+          width={923}
+          height={877}
           className={s.heroImage}
+          alt="FW2022"
         />
       </div>
     </div>
