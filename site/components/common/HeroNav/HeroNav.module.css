@@ -18,9 +18,13 @@
   grid-area: nav;
 }
 
-.sidebar {
+.side {
   grid-area: side;
-  @apply py-9 px-12 flex flex-col items-start justify-center space-y-12;
+  @apply relative;
+}
+
+.sidebar {
+  @apply h-full py-9 pl-12 pr-14 flex flex-col items-start justify-center space-y-12;
 
   .button {
     @apply text-primary uppercase pl-3 border-l-2 border-transparent transition-colors;
@@ -32,8 +36,17 @@
   }
 }
 
+.verticalNav {
+  @apply absolute inset-y-0 my-auto h-8 right-0 z-30;
+  @apply flex items-center space-x-3 translate-x-1/2 -rotate-90;
+
+  a {
+    @apply uppercase whitespace-nowrap;
+  }
+}
+
 .main {
-  @apply flex items-end;
+  @apply flex items-center pb-2;
   grid-area: main;
 }
 
@@ -48,15 +61,15 @@
 }
 
 .activeProduct {
-  @apply mb-20 ml-8 flex flex-col items-end space-y-6 z-20 w-[500px];
+  @apply mt-20 ml-8 flex flex-col items-end space-y-6 z-20 w-full max-w-md;
 
   .activeImage {
-    @apply relative h-full max-h-96 h-auto max-w-full w-auto;
+    @apply relative h-full max-h-[420px] h-auto max-w-full w-auto;
   }
 
   .desc {
     @apply self-start;
-    padding-left: 20%;
+    padding-left: 15%;
 
     & > span {
       @apply text-lg box-decoration-clone bg-secondary text-secondary;
@@ -65,11 +78,23 @@
 }
 
 .productLink {
-  @apply py-5 w-full uppercase text-3xl;
+  @apply py-5 w-full uppercase text-3xl !important;
   max-height: none !important;
 
-  .unit {
-    @apply absolute pt-6 inset-y-0 left-4 block -rotate-90 text-xl;
+  & > :first-child {
+    @apply w-full flex items-center justify-between;
+
+    .unit {
+      @apply -rotate-90 text-xl;
+    }
+
+    .name {
+      @apply flex items-center;
+
+      svg {
+        @apply mr-4;
+      }
+    }
   }
 
   & > * {

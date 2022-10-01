@@ -5,10 +5,18 @@
   border border-2 border-secondary items-center
   tracking-wide;
   max-height: 64px;
-}
 
-.root:hover {
-  @apply bg-primary text-primary;
+  &:hover {
+    @apply bg-primary text-primary;
+  }
+
+  &.inverted {
+    @apply bg-primary text-primary;
+
+    &:hover {
+      @apply bg-accent-9 text-accent-0;
+    }
+  }
 }
 
 .root:focus {

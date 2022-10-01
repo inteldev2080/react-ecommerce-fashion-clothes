@@ -107,7 +107,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
                 'Not Available'
               ) : (
                 <>
-                  <Plus className="h-10 w-10" /> Add To Cart
+                  <Plus /> Add To Cart
                 </>
               )}
             </Button>
