@@ -31,12 +31,9 @@ export type ProductVariant = {
   availableForSale?: boolean
 }
 
-export type ProductMetafields = {
-  includes: string
-  subsystems: string
-  size_guide: string
-  fabric: string
-}
+type Metafield<T> = {
+  value: T
+} | null
 
 export type Product = {
   id: string
@@ -48,7 +45,10 @@ export type Product = {
   path?: string
   images: ProductImage[]
   variants: ProductVariant[]
-  metafields: ProductMetafields[]
+  includes: Metafield<string>
+  subsystems: Metafield<string>
+  size_guide: Metafield<string>
+  fabric: Metafield<string>
   price: ProductPrice
   options: ProductOption[]
   vendor?: string

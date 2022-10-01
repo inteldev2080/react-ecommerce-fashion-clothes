@@ -17,16 +17,12 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
   return (
     <>
       <Container className="max-w-none w-full" clean>
-        {/* <div className={cn(s.root, 'fit')}> */}
         <div className="flex mt-20 flex-wrap lg:flex-nowrap">
           <ProductSidebar
             key={product.id}
             product={product}
             className={s.sidebar}
           />
-
-          {/* <div className={cn(s.main, 'fit')}>
-            <div className={s.sliderContainer}> */}
           <div className="px-8">
             <ProductSlider key={product.id}>
               {product.images.map((image, i) => (
@@ -52,30 +48,6 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
             )}
           </div>
         </div>
-        {/* <hr className="mt-7 border-accent-2" /> */}
-        {/* <section className="py-12 px-6 mb-10">
-          <Text variant="sectionHeading">Related Products</Text>
-          <div className={s.relatedProductsGrid}>
-            {relatedProducts.map((p) => (
-              <div
-                key={p.path}
-                className="animated fadeIn bg-accent-0 border border-accent-2"
-              >
-                <ProductCard
-                  noNameTag
-                  product={p}
-                  key={p.path}
-                  variant="simple"
-                  className="animated fadeIn"
-                  imgProps={{
-                    width: 300,
-                    height: 300,
-                  }}
-                />
-              </div>
-            ))}
-          </div>
-        </section> */}
       </Container>
       <SEO
         title={product.name}

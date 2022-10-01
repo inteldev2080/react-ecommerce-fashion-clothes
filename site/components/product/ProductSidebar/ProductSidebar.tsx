@@ -108,40 +108,37 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
                 'Not Available'
               ) : (
                 <>
-                  <Plus /> Add To Cart
+                  <Plus className="mr-4" />
+                  Add To Cart
                 </>
               )}
             </Button>
           )}
         </div>
-        <div className="mt-14">
-          <div className="flex items-center">
-            <h3 className={s.heading}>Size Guide</h3>
+        {product.size_guide && (
+          <div className="mt-14">
+            <div className="flex items-center">
+              <h3 className={s.heading}>Size Guide</h3>
+            </div>
+            <div className="mt-12 w-60">{product.size_guide.value}</div>
           </div>
-          <div className="mt-12 w-60">
-            Fits true to size. We recommend that you take your normal size. Take
-            the next size up if you wish to achieve a looser fit. Model wears
-            size Medium. measurements are: Height 6’1″ (186cm); Chest 38″
-            (96cm); Waist 32″(81.5cm); Suit 38L.
+        )}
+        {product.fabric && (
+          <div className="mt-14 w-60">
+            <div className="flex items-center">
+              <h3 className={s.heading}>Fabric Technology</h3>
+            </div>
+            <div className="mt-12">{product.fabric.value}</div>
           </div>
-        </div>
-        <div className="mt-14 w-60">
-          <div className="flex items-center">
-            <h3 className={s.heading}>Fabric Technology</h3>
+        )}
+        {product.subsystems && (
+          <div className="mt-14 w-60">
+            <div className="flex items-center">
+              <h3 className={s.heading}>Subsytems</h3>
+            </div>
+            <div className="mt-12">{product.subsystems.value}</div>
           </div>
-          <div className="mt-12">
-            NYLON STRETCH (98% PA, 2% EL) Water repellent, breathable Fabric
-            made in USA Military specification
-          </div>
-        </div>
-        <div className="mt-14 w-60">
-          <div className="flex items-center">
-            <h3 className={s.heading}>Subsytems</h3>
-          </div>
-          <div className="mt-12">
-            JacketSlingǽ Pockets: 4 _External: 2 _Internal: 2
-          </div>
-        </div>
+        )}
         <div className="mt-14 w-60">
           <div className="flex items-center">
             <h3 className={s.heading}>Shipping & Returns</h3>
@@ -150,12 +147,14 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
             READY TO SHIP. PRODUCTS ARE LIMITED STOCK. ALL SALES ARE FINAL.
           </div>
         </div>
-        <div className="mt-14">
-          <div className="flex items-center">
-            <h3 className={s.heading}>Includes</h3>
+        {product.includes && (
+          <div className="mt-14">
+            <div className="flex items-center">
+              <h3 className={s.heading}>Includes</h3>
+            </div>
+            <div className="mt-12 w-60">{product.includes.value}</div>
           </div>
-          <div className="mt-12 w-60">JacketSlingǽ [ Removable ]</div>
-        </div>
+        )}
       </div>
     </div>
   )
