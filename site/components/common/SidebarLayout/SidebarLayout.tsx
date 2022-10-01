@@ -18,14 +18,17 @@ const SidebarLayout: FC<ComponentProps> = ({
   return (
     <div className={cn(s.root, className)}>
       <header className={s.header}>
+        <UserNav />
         {handleClose && (
           <button
             onClick={handleClose}
             aria-label="Close"
             className="hover:text-accent-5 transition ease-in-out duration-150 flex items-center focus:outline-none mr-6"
           >
-            <Cross className="h-6 w-6 hover:text-accent-3" />
-            <span className="ml-2 text-accent-7 text-sm ">Close</span>
+            <div>
+              <Cross className="p-2 h-9 w-9 bg-accent-10 hover:text-accent-3" />
+            </div>
+            {/* <span className="ml-2 text-accent-7 text-sm ">Close</span> */}
           </button>
         )}
         {handleBack && (
@@ -39,7 +42,6 @@ const SidebarLayout: FC<ComponentProps> = ({
           </button>
         )}
 
-        <UserNav />
       </header>
       <div className={s.container}>{children}</div>
     </div>

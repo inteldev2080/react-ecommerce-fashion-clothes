@@ -8,7 +8,7 @@
 
 .item {
   @apply ml-6 cursor-pointer relative transition ease-in-out
-  duration-100 flex items-center outline-none text-primary uppercase font-normal;
+  duration-100 flex items-center outline-none text-2xl font-semibold text-primary uppercase font-normal;
 }
 
 .item:first-child {
