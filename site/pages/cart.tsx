@@ -4,9 +4,12 @@ import usePrice from '@framework/product/use-price'
 import commerce from '@lib/api/commerce'
 import { Layout } from '@components/common'
 import { Button, Text, Container } from '@components/ui'
-import { Bag, Cross, Check, MapPin, CreditCard } from '@components/icons'
+import { Bag, Cross, Check, MapPin, CreditCard, ArrowLeft } from '@components/icons'
 import { CartItem } from '@components/cart'
 import { useUI } from '@components/ui/context'
+import fashionOutlined from '../public/icon_P_1.png'
+import Image from 'next/image'
+import s from '../components/product/ProductSidebar/ProductSidebar.module.css'
 
 export async function getStaticProps({
   preview,
@@ -48,7 +51,13 @@ export default function Cart() {
   }
 
   return (
-    <Container className="grid lg:grid-cols-12 pt-4 gap-20">
+    <div className="flex justify-between">
+      {/* <Container className="grid lg:grid-cols-12 pt-4 gap-20"> */}
+      <div>
+        <div className={s.mainLogo}>
+          <Image src={fashionOutlined} alt="ICON_P_1" />
+        </div>
+      </div>
       <div className="lg:col-span-7">
         {isLoading || isEmpty ? (
           <div className="flex-1 px-12 py-24 flex flex-col justify-center items-center ">
@@ -83,9 +92,12 @@ export default function Cart() {
           </div>
         ) : (
           <div className="lg:px-0 sm:px-6 flex-1">
-            <Text variant="pageHeading">My Cart</Text>
-            <Text variant="sectionHeading">Review your Order</Text>
-            <ul className="py-6 space-y-6 sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accent-2 border-b border-accent-2">
+            <div className="flex items-center mb-6">
+              {/* <Text variant="pageHeading">  My Cart</Text> */}
+              <ArrowLeft /><p className="text-4xl">  My Cart</p>
+            </div>
+            {/* <Text variant="sectionHeading">Review your Order</Text> */}
+            <ul className="py-6 space-y-6 sm:py-0 sm:space-y-0 sm:divide-y sm:divide-accent-2 border-b border-black">
               {data!.lineItems.map((item: any) => (
                 <CartItem
                   key={item.id}
@@ -112,7 +124,7 @@ export default function Cart() {
         )}
       </div>
       <div className="lg:col-span-5">
-        <div className="flex-shrink-0 px-4 py-24 sm:px-6">
+        <div className="flex-shrink-0 mx-8 my-14 px-6 w-485 bg-fr-gray-62">
           {process.env.COMMERCE_CUSTOMCHECKOUT_ENABLED && (
             <>
               {/* Shipping Address */}
@@ -142,7 +154,7 @@ export default function Cart() {
               </div>
             </>
           )}
-          <div className="border-t border-accent-2">
+          <div>
             <ul className="py-3">
               <li className="flex justify-between py-1">
                 <span>Subtotal</span>
@@ -157,13 +169,14 @@ export default function Cart() {
                 <span className="font-bold tracking-wide">FREE</span>
               </li>
             </ul>
-            <div className="flex justify-between border-t border-accent-2 py-3 font-bold mb-10">
+            <div className="border-t border-black my-6"></div>
+            <div className="flex justify-between py-3 font-bold">
               <span>Total</span>
               <span>{total}</span>
             </div>
           </div>
-          <div className="flex flex-row justify-end">
-            <div className="w-full lg:w-72">
+          <div className="flex flex-row justify-end py-5">
+            <div className="w-full">
               {isEmpty ? (
                 <Button href="/" Component="a" width="100%">
                   Continue Shopping
@@ -185,7 +198,7 @@ export default function Cart() {
           </div>
         </div>
       </div>
-    </Container>
+    </div>
   )
 }
 

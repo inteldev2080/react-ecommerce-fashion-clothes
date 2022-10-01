@@ -6,6 +6,9 @@ module.exports = {
   safelist: ['outline-none'],
   theme: {
     extend: {
+      width: {
+        '485': '485px',
+      },
       maxWidth: {
         '8xl': '1920px',
       },
@@ -39,6 +42,7 @@ module.exports = {
         red: 'var(--red)',
         'f3-gray-60': 'var(--f3-gray-60)',
         'f3-light': 'var(--f3-light)',
+        'fr-gray-62': 'var(--fr-gray-62)',
       },
       textColor: {
         base: 'var(--text-base)',
