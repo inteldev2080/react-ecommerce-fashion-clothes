@@ -19,6 +19,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   width?: string | number
   loading?: boolean
   disabled?: boolean
+  inverted?: boolean
 }
 
 // eslint-disable-next-line react/display-name
@@ -45,6 +46,7 @@ const Button: React.FC<ButtonProps> = forwardRef((props, buttonRef) => {
       [s.nakedLeftSide]: variant === 'naked-ls',
       [s.loading]: loading,
       [s.disabled]: disabled,
+      [s.inverted]: props.inverted,
     },
     className
   )

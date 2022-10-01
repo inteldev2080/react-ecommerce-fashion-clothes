@@ -1,17 +1,30 @@
 .root {
-  @apply min-h-screen grid;
+  @apply relative min-h-screen grid;
   grid-template-areas:
-    'side nav'
-    'side main';
+    'nav'
+    'main';
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  @media (min-width: 768px) {
+    grid-template-areas:
+      'side nav'
+      'side main';
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+  }
 }
 
 .nav {
   grid-area: nav;
 }
 
-.sidebar {
+.side {
   grid-area: side;
-  @apply py-9 px-12 flex flex-col items-start justify-center space-y-12;
+  @apply relative;
+}
+
+.sidebar {
+  @apply h-full py-9 pl-12 pr-14 flex flex-col items-start justify-center space-y-12;
 
   .button {
     @apply text-primary uppercase pl-3 border-l-2 border-transparent transition-colors;
@@ -23,6 +36,76 @@
   }
 }
 
+.verticalNav {
+  @apply absolute inset-y-0 my-auto h-8 right-0 z-30;
+  @apply flex items-center space-x-3 translate-x-1/2 -rotate-90;
+
+  a {
+    @apply uppercase whitespace-nowrap;
+  }
+}
+
 .main {
+  @apply flex items-center pb-2;
   grid-area: main;
+}
+
+.heroImage {
+  @apply absolute z-0 right-0 bottom-0 w-auto object-contain;
+  height: calc(100% - 140px);
+  max-height: 923px;
+}
+
+.fashionImage {
+  @apply absolute z-0 left-0 bottom-20;
+}
+
+.activeProduct {
+  @apply mt-20 ml-8 flex flex-col items-end space-y-6 z-20 w-full max-w-md;
+
+  .activeImage {
+    @apply relative h-full max-h-[420px] h-auto max-w-full w-auto;
+  }
+
+  .desc {
+    @apply self-start;
+    padding-left: 15%;
+
+    & > span {
+      @apply text-lg box-decoration-clone bg-secondary text-secondary;
+    }
+  }
+}
+
+.productLink {
+  @apply py-5 w-full uppercase text-3xl !important;
+  max-height: none !important;
+
+  & > :first-child {
+    @apply w-full flex items-center justify-between;
+
+    .unit {
+      @apply -rotate-90 text-xl;
+    }
+
+    .name {
+      @apply flex items-center;
+
+      svg {
+        @apply mr-4;
+      }
+    }
+  }
+
+  & > * {
+    @apply transition-opacity;
+  }
+
+  & > :last-child {
+    @apply absolute inset-0 m-auto flex items-center justify-center opacity-0;
+  }
+
+  &:hover > * {
+    @apply first:opacity-0 last:opacity-100;
+  }
 }
