@@ -27,6 +27,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
   const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>({})
 
   useEffect(() => {
+    console.log(product)
     selectDefaultOptionFromProduct(product, setSelectedOptions)
   }, [product])
 
