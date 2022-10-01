@@ -15,6 +15,18 @@ const getProductQuery = /* GraphQL */ `
         name
         values
       }
+      includes: metafield(namespace: "custom", key: "includes") {
+        value
+      }
+      subsystems: metafield(namespace: "custom", key: "subsystems") {
+        value
+      }
+      size_guide: metafield(namespace: "custom", key: "size_guide") {
+        value
+      }
+      fabric: metafield(namespace: "custom", key: "fabric") {
+        value
+      }
       priceRange {
         maxVariantPrice {
           amount
