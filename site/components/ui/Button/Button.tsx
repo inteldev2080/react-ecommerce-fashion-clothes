@@ -32,6 +32,7 @@ const Button: React.FC<ButtonProps> = forwardRef((props, buttonRef) => {
     width,
     loading = false,
     disabled = false,
+    inverted = false,
     style = {},
     Component = 'button',
     ...rest
@@ -46,7 +47,8 @@ const Button: React.FC<ButtonProps> = forwardRef((props, buttonRef) => {
       [s.nakedLeftSide]: variant === 'naked-ls',
       [s.loading]: loading,
       [s.disabled]: disabled,
-      [s.inverted]: props.inverted,
+      [s.inverted]: inverted,
+      [s.active]: active,
     },
     className
   )
