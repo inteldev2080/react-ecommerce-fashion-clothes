@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useState } from 'react'
 import cn from 'clsx'
-import Image from 'next/image'
+import Image from 'next/future/image'
 import Link from 'next/link'
 import s from './CartItem.module.css'
 import { useUI } from '@components/ui/context'
@@ -100,7 +100,7 @@ const CartItem = ({
             </a>
           </Link>
         </div>
-        <div className="flex-1 flex flex-col justify-between">
+        <div className="flex-1 flex flex-col justify-between border-r-2 border-current">
           <div>
             <Link href={`/product/${item.path}`}>
               <a>
@@ -152,7 +152,6 @@ const CartItem = ({
             )}
           </div>
         </div>
-        <div className="flex flex-col justify-between space-y-2 border-r-2 border-black"></div>
       </div>
     </li>
   )

@@ -1,7 +1,5 @@
 .actions {
-  @apply flex p-1 border-black border items-center justify-center
-    /* w-12 */
-  text-accent-7;
+  @apply flex p-1 border-black border items-center justify-center;
   transition-duration: 0.15s;
 
   transition-property: border-color, background, color, transform, box-shadow;

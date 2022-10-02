@@ -17,20 +17,12 @@
 }
 
 .productImage {
-  height: 100%;
-  left: 30% !important;
-  position: absolute;
-  top: 30% !important;
-  transform: scale(1.9);
-  width: 100%;
-  z-index: 1;
 }
 
 .productName {
-  @apply font-medium cursor-pointer pb-1 flex items-center;
-  margin-top: -4px;
+  @apply font-medium cursor-pointer pb-1 flex items-center -mt-1;
 }
 
 .productName::after {
-  @apply content-[''] bg-secondary block h-2.5 w-2.5 ml-2.5;
+  @apply content-[''] bg-current block h-2.5 w-2.5 ml-2.5;
 }
