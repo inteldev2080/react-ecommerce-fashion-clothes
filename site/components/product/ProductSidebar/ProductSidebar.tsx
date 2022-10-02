@@ -11,8 +11,8 @@ import {
 } from '../helpers'
 import ProductTag from '@components/product/ProductTag'
 import usePrice from '@framework/product/use-price'
-import Image from 'next/image'
 import fashionOutlined from '../../../public/icon_P_1.png'
+import Image from 'next/future/image'
 import { Plus } from '@components/icons'
 
 interface ProductSidebarProps {
@@ -27,7 +27,6 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
   const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>({})
 
   useEffect(() => {
-    console.log(product)
     selectDefaultOptionFromProduct(product, setSelectedOptions)
   }, [product])
 
@@ -55,18 +54,10 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
 
   return (
     <div className="flex w-full">
-      <div className={s.mainLogo}>
-        <Image src={fashionOutlined} alt="ICON_P_1" />
-      </div>
-
-      {/* <div className={className}> */}
+      <Image src={fashionOutlined} className={s.sideLogo} alt="Fashion3" />
 
       <div className="basis-2/4 mx-auto px-4 lg:px-0">
-        <ProductTag
-          name={product.name}
-          price={`${price} ${product.price?.currencyCode}`}
-          fontSize={32}
-        />
+        <ProductTag name={product.name} price={price} fontSize={32} />
 
         <div className="mt-6 flex gap-4">
           {product.tags?.map((item: any, index: number) => {
@@ -78,7 +69,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
           })}
         </div>
 
-        <div className="mt-20">
+        <div className="mt-16">
           <div className="flex items-center">
             <h3 className={s.heading}>Description</h3>
           </div>
@@ -115,46 +106,38 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
             </Button>
           )}
         </div>
-        {product.size_guide && (
-          <div className="mt-14">
-            <div className="flex items-center">
+        <div className={s.meta}>
+          {product.size_guide && (
+            <div>
               <h3 className={s.heading}>Size Guide</h3>
+              <div>{product.size_guide.value}</div>
             </div>
-            <div className="mt-12 w-60">{product.size_guide.value}</div>
-          </div>
-        )}
-        {product.fabric && (
-          <div className="mt-14 w-60">
-            <div className="flex items-center">
+          )}
+          {product.fabric && (
+            <div>
               <h3 className={s.heading}>Fabric Technology</h3>
+              <div>{product.fabric.value}</div>
             </div>
-            <div className="mt-12">{product.fabric.value}</div>
-          </div>
-        )}
-        {product.subsystems && (
-          <div className="mt-14 w-60">
-            <div className="flex items-center">
+          )}
+          {product.subsystems && (
+            <div>
               <h3 className={s.heading}>Subsytems</h3>
+              <div>{product.subsystems.value}</div>
             </div>
-            <div className="mt-12">{product.subsystems.value}</div>
-          </div>
-        )}
-        <div className="mt-14 w-60">
-          <div className="flex items-center">
+          )}
+          <div>
             <h3 className={s.heading}>Shipping & Returns</h3>
-          </div>
-          <div className="mt-12">
-            READY TO SHIP. PRODUCTS ARE LIMITED STOCK. ALL SALES ARE FINAL.
-          </div>
-        </div>
-        {product.includes && (
-          <div className="mt-14">
-            <div className="flex items-center">
-              <h3 className={s.heading}>Includes</h3>
+            <div>
+              READY TO SHIP. PRODUCTS ARE LIMITED STOCK. ALL SALES ARE FINAL.
             </div>
-            <div className="mt-12 w-60">{product.includes.value}</div>
           </div>
-        )}
+          {product.includes && (
+            <div>
+              <h3 className={s.heading}>Includes</h3>
+              <div>{product.includes.value}</div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   )

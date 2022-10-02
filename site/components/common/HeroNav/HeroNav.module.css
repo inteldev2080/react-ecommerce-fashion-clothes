@@ -41,7 +41,8 @@
   @apply flex items-center space-x-3 translate-x-1/2 -rotate-90;
 
   a {
-    @apply uppercase whitespace-nowrap;
+    @apply uppercase whitespace-nowrap pb-0.5 mt-1.5;
+    @apply border-transparent border-b-2 transition-colors hover:border-current;
   }
 }
 

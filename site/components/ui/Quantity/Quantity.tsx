@@ -1,7 +1,8 @@
 import React, { FC } from 'react'
 import s from './Quantity.module.css'
-import { Cross, Plus, Minus } from '@components/icons'
+import { Minus, Plus } from '@components/icons'
 import cn from 'clsx'
+
 export interface QuantityProps {
   value: number
   increase: () => any
@@ -20,7 +21,7 @@ const Quantity: FC<QuantityProps> = ({
   max = 6,
 }) => {
   return (
-    <div className="flex flex-row h-9">
+    <div className="flex items-center h-9">
       <button
         type="button"
         onClick={decrease}
@@ -28,21 +29,9 @@ const Quantity: FC<QuantityProps> = ({
         style={{ marginLeft: '-1px' }}
         disabled={value <= 1}
       >
-        <Minus width={18} height={18} />
+        <Minus width={18} height={18} strokeWidth={2} />
       </button>
-      <label className="ml-2 mr-2">
-        <input
-          className={s.input}
-          onChange={(e) =>
-            Number(e.target.value) < max + 1 ? handleChange(e) : () => { }
-          }
-          value={value}
-          type="number"
-          max={max}
-          min="0"
-          readOnly
-        />
-      </label>
+      <div className="px-2">{value}</div>
       <button
         type="button"
         onClick={increase}
@@ -50,7 +39,7 @@ const Quantity: FC<QuantityProps> = ({
         style={{ marginLeft: '-1px' }}
         disabled={value < 1 || value >= max}
       >
-        <Plus width={18} height={18} />
+        <Plus width={18} height={18} strokeWidth={2} />
       </button>
 
       {/* <button className={s.actions} onClick={handleRemove}>

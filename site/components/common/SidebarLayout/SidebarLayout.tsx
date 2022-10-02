@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
 import { ChevronLeft, Cross } from '@components/icons'
-import { UserNav } from '@components/common'
 import cn from 'clsx'
 import s from './SidebarLayout.module.css'
 
@@ -18,15 +17,15 @@ const SidebarLayout: FC<ComponentProps> = ({
   return (
     <div className={cn(s.root, className)}>
       <header className={s.header}>
-        <UserNav />
+        <div className="text-36xl">Cart</div>
         {handleClose && (
           <button
             onClick={handleClose}
             aria-label="Close"
-            className="hover:text-accent-5 transition ease-in-out duration-150 flex items-center focus:outline-none mr-6"
+            className="hover:text-accent-5 transition ease-in-out duration-150 flex items-center focus:outline-none"
           >
             <div>
-              <Cross className="p-2 h-9 w-9 bg-accent-10 hover:text-accent-3" />
+              <Cross className="p-2 h-9 w-9 bg-f3-accent-10 hover:text-accent-3" />
             </div>
             {/* <span className="ml-2 text-accent-7 text-sm ">Close</span> */}
           </button>
@@ -41,7 +40,6 @@ const SidebarLayout: FC<ComponentProps> = ({
             <span className="ml-2 text-accent-7 text-xs">Back</span>
           </button>
         )}
-
       </header>
       <div className={s.container}>{children}</div>
     </div>

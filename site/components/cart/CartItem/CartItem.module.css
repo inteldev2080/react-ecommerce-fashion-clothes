@@ -1,5 +1,5 @@
 .root {
-  @apply flex flex-col py-4;
+  @apply flex flex-col py-4 pr-8;
 }
 
 .root:first-child {
@@ -17,12 +17,12 @@
 }
 
 .productImage {
-  position: absolute;
-  transform: scale(1.9);
-  width: 100%;
   height: 100%;
   left: 30% !important;
+  position: absolute;
   top: 30% !important;
+  transform: scale(1.9);
+  width: 100%;
   z-index: 1;
 }
 

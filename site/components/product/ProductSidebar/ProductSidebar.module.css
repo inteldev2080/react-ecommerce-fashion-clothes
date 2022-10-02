@@ -65,6 +65,18 @@
   @apply content-[''] bg-secondary block h-2.5 w-2.5 ml-2.5;
 }
 
+.meta {
+  @apply mt-16 space-y-14;
+
+  & > div {
+    @apply whitespace-pre-line w-2/3;
+  }
+
+  .heading {
+    @apply mb-9;
+  }
+}
+
 .wishlistButton {
   @apply absolute z-30 top-0 right-0;
 }
@@ -79,20 +91,13 @@
   padding: 0.5rem 1rem;
 }
 
-.mainLogo {
-  margin-top: 44px;
-  position: fixed;
-  width: 110px;
+.sideLogo {
+  @apply absolute mt-8 left-0 z-10 w-32;
 }
 
 .description {
-  border-right: 2px solid;
-  /* max-height: 12rem; */
+  @apply mt-3 pr-2 border-r-2 border-current;
   line-height: 205%;
-  margin-top: 0.75rem;
-  overflow-wrap: break-word;
-  width: 477px;
-  /* overflow: scroll; */
 }
 
 /* CUSTOMIZE SCROLLER */ /* width */
@@ -110,6 +115,10 @@
 /* Handle on hover */
 .description::-webkit-scrollbar-thumb:hover {
   background: #34455e;
+}
+
+.checkoutButton {
+  @apply w-full border-white !important;
 }
 
 @screen lg {

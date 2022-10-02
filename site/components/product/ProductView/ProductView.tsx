@@ -1,12 +1,12 @@
-import Image from 'next/image'
+import Image from 'next/future/image'
 import s from './ProductView.module.css'
 import { FC } from 'react'
 import type { Product } from '@commerce/types/product'
 import { WishlistButton } from '@components/wishlist'
-import { ProductSlider } from '@components/product'
 import { Container } from '@components/ui'
 import { SEO } from '@components/common'
 import ProductSidebar from '../ProductSidebar'
+import fashionOutlined from '../../../public/fashion3-bottom.png'
 
 interface ProductViewProps {
   product: Product
@@ -17,28 +17,34 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
   return (
     <>
       <Container className="max-w-none w-full" clean>
-        <div className="flex mt-20 flex-wrap lg:flex-nowrap">
+        <div className={s.containerInner}>
           <ProductSidebar
             key={product.id}
             product={product}
             className={s.sidebar}
           />
-          <div className="px-8">
-            <ProductSlider key={product.id}>
+          <div className={s.rightColumn}>
+            <div className={s.imageContainer}>
               {product.images.map((image, i) => (
-                <div key={image.url} className={s.imageContainer}>
-                  <Image
-                    className={s.img}
-                    src={image.url!}
-                    alt={image.alt || 'Product Image'}
-                    width={600}
-                    height={600}
-                    priority={i === 0}
-                    quality="85"
-                  />
-                </div>
+                <Image
+                  key={image.url}
+                  className={s.img}
+                  src={image.url!}
+                  alt={image.alt || 'Product Image'}
+                  width={600}
+                  height={600}
+                  priority={i === 0}
+                  quality="85"
+                />
               ))}
-            </ProductSlider>
+            </div>
+
+            <Image
+              src={fashionOutlined}
+              className={s.bottomLogo}
+              alt="Fashion3"
+            />
+
             {process.env.COMMERCE_WISHLIST_ENABLED && (
               <WishlistButton
                 className={s.wishlistButton}

@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       width: {
-        '485': '485px',
+        485: '485px',
       },
       maxWidth: {
         '8xl': '1920px',
@@ -30,7 +30,6 @@ module.exports = {
         'accent-7': 'var(--accent-7)',
         'accent-8': 'var(--accent-8)',
         'accent-9': 'var(--accent-9)',
-        'accent-10': 'var(--accent-10)',
         violet: 'var(--violet)',
         'violet-light': 'var(--violet-light)',
         'violet-dark': 'var(--violet-dark)',
@@ -40,6 +39,8 @@ module.exports = {
         blue: 'var(--blue)',
         green: 'var(--green)',
         red: 'var(--red)',
+        'f3-accent-10': 'var(--f3-accent-10)',
+        'f3-accent-11': 'var(--f3-accent-11)',
         'f3-gray-60': 'var(--f3-gray-60)',
         'f3-light': 'var(--f3-light)',
         'fr-gray-62': 'var(--fr-gray-62)',
@@ -48,7 +49,7 @@ module.exports = {
         base: 'var(--text-base)',
         primary: 'var(--text-primary)',
         secondary: 'var(--text-secondary)',
-        'f3-gray-61': 'var(--f3-gray-61)'
+        'f3-gray-61': 'var(--f3-gray-61)',
       },
       fontSize: {
         '64xl': '4rem',

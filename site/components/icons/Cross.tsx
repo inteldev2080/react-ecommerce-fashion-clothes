@@ -5,7 +5,7 @@ const Cross = ({ ...props }) => {
       width="24"
       height="24"
       stroke="currentColor"
-      strokeWidth="1.5"
+      strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"
       fill="none"
