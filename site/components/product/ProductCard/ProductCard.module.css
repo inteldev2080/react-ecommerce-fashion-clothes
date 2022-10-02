@@ -1,49 +1,18 @@
 .root {
-  @apply relative max-h-full w-full box-border overflow-hidden
+  @apply relative max-h-full w-full max-w-sm box-border overflow-hidden
   bg-no-repeat bg-center bg-cover transition-transform
-  ease-linear cursor-pointer inline-block bg-accent-1;
+  ease-linear cursor-pointer inline-block;
   height: 100% !important;
 }
 
 .root:hover {
   & .productImage {
-    transform: scale(1.2625);
-  }
-
-  & .header .name span,
-  & .header .price,
-  & .wishlistButton {
-    @apply bg-secondary text-secondary;
-  }
-
-  &:nth-child(6n + 1) .header .name span,
-  &:nth-child(6n + 1) .header .price,
-  &:nth-child(6n + 1) .wishlistButton {
-    @apply bg-violet text-white;
-  }
-
-  &:nth-child(6n + 5) .header .name span,
-  &:nth-child(6n + 5) .header .price,
-  &:nth-child(6n + 5) .wishlistButton {
-    @apply bg-blue text-white;
-  }
-
-  &:nth-child(6n + 3) .header .name span,
-  &:nth-child(6n + 3) .header .price,
-  &:nth-child(6n + 3) .wishlistButton {
-    @apply bg-pink text-white;
-  }
-
-  &:nth-child(6n + 6) .header .name span,
-  &:nth-child(6n + 6) .header .price,
-  &:nth-child(6n + 6) .wishlistButton {
-    @apply bg-cyan text-white;
+    @apply scale-105;
   }
 }
 
 .header {
-  @apply transition-colors ease-in-out duration-500
-  absolute top-0 left-0 z-20 pr-16;
+  @apply transition-colors ease-in-out duration-500;
 }
 
 .header .name {
@@ -54,16 +23,16 @@
 }
 
 .header .name span {
-  @apply py-4 px-6 bg-primary text-primary font-bold
+  @apply text-primary font-bold
   transition-colors ease-in-out duration-500;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
   font-size: inherit;
   letter-spacing: inherit;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
 }
 
 .header .price {
-  @apply pt-2 px-6 pb-4 text-sm bg-primary text-accent-9
+  @apply pt-2 px-6 pb-4 text-sm text-accent-9
   font-semibold inline-block tracking-wide
   transition-colors ease-in-out duration-500;
 }
@@ -78,7 +47,7 @@
 
 .imageContainer .productImage {
   @apply transform transition-transform duration-500
-  object-cover scale-120;
+  object-cover h-72;
 }
 
 .root .wishlistButton {
@@ -86,12 +55,21 @@
 }
 
 /* Variant Simple */
-.simple .header .name {
-  @apply pt-2 text-lg leading-10 -mt-1;
+.simple.root {
+  @apply relative pl-8;
 }
 
-.simple .header .price {
-  @apply text-sm;
+.simple .header {
+  @apply absolute top-0 z-10 -rotate-90 origin-right;
+  right: calc(100% - 1rem);
+
+  .name {
+    @apply text-lg whitespace-nowrap !important;
+  }
+}
+
+.simple .price {
+  @apply pt-1 text-xl;
 }
 
 /* Variant Slim */

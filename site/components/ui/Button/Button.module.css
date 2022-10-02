@@ -6,14 +6,16 @@
   tracking-wide;
   max-height: 64px;
 
-  &:hover {
+  &:hover,
+  &.active {
     @apply bg-primary text-primary;
   }
 
   &.inverted {
     @apply bg-primary text-primary;
 
-    &:hover {
+    &:hover,
+    &.active {
       @apply bg-accent-9 text-accent-0;
     }
   }

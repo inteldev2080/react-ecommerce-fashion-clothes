@@ -61,6 +61,7 @@ const HomeAllProductsGrid: FC<Props> = ({
               imgProps={{
                 width: 480,
                 height: 480,
+                alt: product.name || 'Product Image',
               }}
             />
           ))}
