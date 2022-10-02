@@ -76,6 +76,7 @@ const CartItem = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [item.quantity])
 
+  const desc = item?.variant?.description
   return (
     <li
       className={cn(s.root, {
@@ -114,7 +115,7 @@ const CartItem = ({
             </Link>
             <div>{price}</div>
           </div>
-          <p className="text-sm">3L Gore-Tex Pro Jacket</p>
+          <p className="text-sm">{desc}</p>
           {options && options.length > 0 && (
             <div className="flex items-center pb-1 mt-1.5">
               {options.map((option: ItemOption, i: number) => (

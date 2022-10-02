@@ -50,6 +50,7 @@ export const checkoutDetailsFragment = /* GraphQL */ `
             }
             product {
               handle
+              description
             }
           }
           quantity

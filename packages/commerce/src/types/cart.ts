@@ -1,4 +1,4 @@
-import type { Discount, Measurement, Image } from './common'
+import type { Discount, Image, Measurement } from './common'
 
 export type SelectedOption = {
   // The option's id.
@@ -54,6 +54,8 @@ export type ProductVariant = {
   // The variant's depth. If a depth was not explicitly specified on the
   // variant, this will be the product's depth.
   depth?: Measurement
+
+  description?: string
 }
 
 // Shopping cart, a.k.a Checkout

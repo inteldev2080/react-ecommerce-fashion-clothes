@@ -4,17 +4,17 @@ import type { Cart, LineItem } from '../types/cart'
 import type { Category } from '../types/site'
 
 import {
-  Product as ShopifyProduct,
   Checkout,
   CheckoutLineItemEdge,
-  SelectedOption,
+  Collection,
   ImageConnection,
-  ProductVariantConnection,
   MoneyV2,
-  ProductOption,
   Page as ShopifyPage,
   PageEdge,
-  Collection,
+  Product as ShopifyProduct,
+  ProductOption,
+  ProductVariantConnection,
+  SelectedOption,
 } from '../../schema'
 import { colorMap } from './colors'
 
@@ -166,6 +166,7 @@ function normalizeLineItem({
       requiresShipping: variant?.requiresShipping ?? false,
       price: variant?.priceV2?.amount,
       listPrice: variant?.compareAtPriceV2?.amount,
+      description: variant?.product?.description,
     },
     path: String(variant?.product?.handle),
     discounts: [],
