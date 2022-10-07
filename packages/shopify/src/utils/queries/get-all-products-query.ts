@@ -11,6 +11,12 @@ export const productConnectionFragment = /* GraphQL */ `
         vendor
         handle
         description
+        short_description: metafield(
+          namespace: "custom"
+          key: "short_description"
+        ) {
+          value
+        }
         priceRange {
           minVariantPrice {
             amount

@@ -45,6 +45,7 @@ export type Product = {
   path?: string
   images: ProductImage[]
   variants: ProductVariant[]
+  short_description: Metafield<string>
   includes: Metafield<string>
   subsystems: Metafield<string>
   size_guide: Metafield<string>

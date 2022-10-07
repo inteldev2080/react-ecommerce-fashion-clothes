@@ -166,7 +166,8 @@ function normalizeLineItem({
       requiresShipping: variant?.requiresShipping ?? false,
       price: variant?.priceV2?.amount,
       listPrice: variant?.compareAtPriceV2?.amount,
-      description: variant?.product?.description,
+      // @ts-ignore
+      shortDescription: variant?.product?.short_description?.value,
     },
     path: String(variant?.product?.handle),
     discounts: [],

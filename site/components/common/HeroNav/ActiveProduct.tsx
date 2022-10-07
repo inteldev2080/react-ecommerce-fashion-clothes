@@ -30,9 +30,11 @@ export const ActiveProduct = ({ product }: { product: Product }) => {
           <div>View Product</div>
         </Button>
       </Link>
-      <div className={s.desc}>
-        <span>{product.description}</span>
-      </div>
+      {product.short_description && (
+        <div className={s.desc}>
+          <span>{product.short_description?.value}</span>
+        </div>
+      )}
     </div>
   )
 }

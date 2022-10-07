@@ -55,7 +55,7 @@ export type ProductVariant = {
   // variant, this will be the product's depth.
   depth?: Measurement
 
-  description?: string
+  shortDescription?: string
 }
 
 // Shopping cart, a.k.a Checkout

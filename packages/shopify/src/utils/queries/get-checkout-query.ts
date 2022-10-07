@@ -51,6 +51,12 @@ export const checkoutDetailsFragment = /* GraphQL */ `
             product {
               handle
               description
+              short_description: metafield(
+                namespace: "custom"
+                key: "short_description"
+              ) {
+                value
+              }
             }
           }
           quantity

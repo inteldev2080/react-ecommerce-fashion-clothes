@@ -24,7 +24,7 @@
 }
 
 .sidebar {
-  @apply h-full py-9 pl-12 pr-14 flex flex-col items-start justify-center space-y-12;
+  @apply relative h-full py-9 pl-12 pr-14 flex flex-col items-start justify-center space-y-12 z-20;
 
   .button {
     @apply text-primary uppercase pl-3 border-l-2 border-transparent transition-colors;

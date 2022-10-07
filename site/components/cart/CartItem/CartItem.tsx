@@ -76,7 +76,7 @@ const CartItem = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [item.quantity])
 
-  const desc = item?.variant?.description
+  const desc = item?.variant?.shortDescription
   return (
     <li
       className={cn(s.root, {
