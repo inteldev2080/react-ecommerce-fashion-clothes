@@ -48,6 +48,14 @@ const HeroNav = ({ products }: Props): JSX.Element => {
 
   const activeProduct = products.find((product) => product.id === activeId)
 
+  const onProductClick = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    product: Product
+  ) => {
+    e.currentTarget.scrollIntoView({ block: 'center', behavior: 'smooth' })
+    setActiveId(product.id)
+  }
+
   return (
     <div className={s.root}>
       <Navbar className={s.nav} />
@@ -61,7 +69,7 @@ const HeroNav = ({ products }: Props): JSX.Element => {
                   [s.active]: product.id === activeId,
                 })}
                 type="button"
-                onClick={() => setActiveId(product.id)}
+                onClick={(e) => onProductClick(e, product)}
               >
                 {product.name}
               </button>

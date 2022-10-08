@@ -24,7 +24,7 @@
 }
 
 .sidebarOuter {
-  @apply absolute inset-0 py-9 w-52 pl-12 pr-6 scrollbar-thin;
+  @apply absolute inset-0 py-9 w-52 pl-12 pr-6 scrollbar-thin overscroll-contain;
 }
 
 .sidebar {

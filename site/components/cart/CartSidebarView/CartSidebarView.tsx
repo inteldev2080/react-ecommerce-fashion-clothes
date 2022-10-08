@@ -119,7 +119,7 @@ const CartSidebarView: FC = () => {
                     onClick={handleClose}
                     className="w-full h-12 text-xl"
                   >
-                    Safe To Checkout
+                    Checkout
                   </Button>
                 </Link>
               )}

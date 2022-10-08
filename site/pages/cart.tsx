@@ -186,7 +186,7 @@ export default function Cart() {
                         Component="a"
                         className={s.checkoutButton}
                       >
-                        Safe To Checkout
+                        Checkout
                       </Button>
                     )}
                   </>
