@@ -11,7 +11,7 @@ import {
 } from '../helpers'
 import ProductTag from '@components/product/ProductTag'
 import usePrice from '@framework/product/use-price'
-import fashionOutlined from '../../../public/icon_P_1.png'
+import fashionOutlined from '../../../public/fashion3-outline-side.png'
 import Image from 'next/future/image'
 import { Plus } from '@components/icons'
 
@@ -75,16 +75,18 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
           </div>
           <div className={s.description}>{product.description}</div>
         </div>
-        <div className="mt-12">
-          <div className="flex items-center">
-            <h3 className={s.heading}>Size</h3>
+        {product.options.length > 0 && (
+          <div className="mt-12">
+            <div className="flex items-center">
+              <h3 className={s.heading}>Size</h3>
+            </div>
+            <ProductOptions
+              options={product.options}
+              selectedOptions={selectedOptions}
+              setSelectedOptions={setSelectedOptions}
+            />
           </div>
-          <ProductOptions
-            options={product.options}
-            selectedOptions={selectedOptions}
-            setSelectedOptions={setSelectedOptions}
-          />
-        </div>
+        )}
         <div className="mt-12">
           {process.env.COMMERCE_CART_ENABLED && (
             <Button

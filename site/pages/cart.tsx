@@ -14,7 +14,7 @@ import {
 } from '@components/icons'
 import { CartItem } from '@components/cart'
 import { useUI } from '@components/ui/context'
-import fashionOutlined from '../public/icon_P_1.png'
+import fashionOutlined from '../public/fashion3-outline-side.png'
 import Image from 'next/future/image'
 import s from '../components/product/ProductSidebar/ProductSidebar.module.css'
 import Link from 'next/link'

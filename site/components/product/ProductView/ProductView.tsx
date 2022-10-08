@@ -6,7 +6,7 @@ import { WishlistButton } from '@components/wishlist'
 import { Container } from '@components/ui'
 import { SEO } from '@components/common'
 import ProductSidebar from '../ProductSidebar'
-import fashionOutlined from '../../../public/fashion3-bottom.png'
+import fashionOutlinedBottom from '../../../public/fashion3-bottom.png'
 
 interface ProductViewProps {
   product: Product
@@ -39,12 +39,6 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
               ))}
             </div>
 
-            <Image
-              src={fashionOutlined}
-              className={s.bottomLogo}
-              alt="Fashion3"
-            />
-
             {process.env.COMMERCE_WISHLIST_ENABLED && (
               <WishlistButton
                 className={s.wishlistButton}
@@ -55,6 +49,11 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
           </div>
         </div>
       </Container>
+      <Image
+        src={fashionOutlinedBottom}
+        className={s.fashion3BottomRight}
+        alt="Fashion3"
+      />
       <SEO
         title={product.name}
         description={product.description}

@@ -16,7 +16,7 @@ import rangeMap from '@lib/range-map'
 import { filterQuery, useSearchMeta } from '@lib/search'
 import Image from 'next/future/image'
 import fashionOutlinedBottom from '../public/fashion3-bottom.png'
-import fashionOutlined from '../public/icon_P_1.png'
+import fashionOutlined from '../public/fashion3-outline-side.png'
 import s from '@components/product/ProductView/ProductView.module.css'
 import ps from '../components/product/ProductSidebar/ProductSidebar.module.css'
 
@@ -431,7 +431,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
       </div>
       <Image
         src={fashionOutlinedBottom}
-        className={s.bottomLogo}
+        className={s.fashion3BottomRight}
         alt="Fashion3"
       />
     </>

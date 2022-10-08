@@ -1,8 +1,9 @@
 import { Container } from '@components/ui'
 import Image from 'next/image'
-import ultra from '../../../public/icon_f_1.png'
-import nft from '../../../public/icon_f_2.png'
+import ultra from '../../../public/ultra.png'
+import nft from '../../../public/nft.png'
 import s from './Footer.module.css'
+import { Email } from '@components/common/Link'
 
 const HeroFooter = () => {
   return (
@@ -28,7 +29,9 @@ const HeroFooter = () => {
           <p className="mt-8">
             7014 13th avenue suite 202, Brooklyn, NY, United States, 11228
           </p>
-          <p className="mt-8">Our inquiry email address is hello@fashion3.io</p>
+          <p className="mt-8">
+            Our inquiry email address is <Email>hello@fashion3.io</Email>
+          </p>
         </div>
         <div className="mt-16 w-40 flex items-center justify-between">
           <Image src={ultra} alt="ultra" />

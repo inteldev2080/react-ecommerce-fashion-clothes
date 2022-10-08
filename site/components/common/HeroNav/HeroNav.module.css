@@ -1,5 +1,5 @@
 .root {
-  @apply relative min-h-screen grid;
+  @apply relative min-h-screen grid min-h-0;
   grid-template-areas:
     'nav'
     'main';
@@ -9,8 +9,8 @@
     grid-template-areas:
       'side nav'
       'side main';
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto 1fr;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
   }
 }
 
@@ -20,14 +20,18 @@
 
 .side {
   grid-area: side;
-  @apply relative;
+  @apply relative w-48 z-20;
+}
+
+.sidebarOuter {
+  @apply absolute inset-0 py-9 w-52 pl-12 pr-6 scrollbar-thin;
 }
 
 .sidebar {
-  @apply relative h-full py-9 pl-12 pr-14 flex flex-col items-start justify-center space-y-12 z-20;
+  @apply min-h-full flex flex-col items-start justify-center space-y-12;
 
   .button {
-    @apply text-primary uppercase pl-3 border-l-2 border-transparent transition-colors;
+    @apply block w-full text-left overflow-hidden text-primary uppercase pl-3 border-l-2 border-transparent transition-colors truncate;
 
     &:hover,
     &.active {
@@ -37,7 +41,7 @@
 }
 
 .verticalNav {
-  @apply absolute inset-y-0 my-auto h-8 right-0 z-30;
+  @apply absolute inset-y-0 my-auto h-8 -right-8 z-30;
   @apply flex items-center space-x-3 translate-x-1/2 -rotate-90;
 
   a {
@@ -49,6 +53,7 @@
 .main {
   @apply flex items-center pb-2;
   grid-area: main;
+  min-height: 880px;
 }
 
 .heroImage {
@@ -62,18 +67,20 @@
 }
 
 .activeProduct {
-  @apply mt-20 ml-8 flex flex-col items-end space-y-6 z-20 w-full max-w-md;
+  @apply mt-32 ml-16 flex flex-col items-end space-y-6 z-20 w-full max-w-md;
 
   .activeImage {
-    @apply relative h-full max-h-[420px] h-auto max-w-full w-auto;
+    @apply relative object-cover h-auto max-w-full w-auto;
+    height: 339px;
+    width: 226px;
   }
 
   .desc {
-    @apply self-start;
+    @apply self-start break-all h-24;
     padding-left: 15%;
 
     & > span {
-      @apply text-lg box-decoration-clone bg-secondary text-secondary;
+      @apply text-lg box-decoration-clone bg-secondary text-secondary line-clamp-3;
     }
   }
 }

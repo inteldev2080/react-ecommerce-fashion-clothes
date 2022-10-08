@@ -41,6 +41,8 @@ const verticalItems = [
   { name: 'Grid view', url: '/search' },
 ]
 
+const repeat = <T,>(arr: T[], n: number): T[] => Array(n).fill(arr).flat()
+
 const HeroNav = ({ products }: Props): JSX.Element => {
   const [activeId, setActiveId] = useState<string>()
 
@@ -50,18 +52,22 @@ const HeroNav = ({ products }: Props): JSX.Element => {
     <div className={s.root}>
       <Navbar className={s.nav} />
       <div className={s.side}>
-        <nav className={s.sidebar}>
-          {products.map((product) => (
-            <button
-              key={product.id}
-              className={cn(s.button, { [s.active]: product.id === activeId })}
-              type="button"
-              onClick={() => setActiveId(product.id)}
-            >
-              {product.name}
-            </button>
-          ))}
-        </nav>
+        <div className={s.sidebarOuter}>
+          <nav className={s.sidebar}>
+            {repeat<Product>(products, 5).map((product) => (
+              <button
+                key={product.id}
+                className={cn(s.button, {
+                  [s.active]: product.id === activeId,
+                })}
+                type="button"
+                onClick={() => setActiveId(product.id)}
+              >
+                {product.name}
+              </button>
+            ))}
+          </nav>
+        </div>
         <VerticalNav items={verticalItems} />
       </div>
       <div className={s.main}>

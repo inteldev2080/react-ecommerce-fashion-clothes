@@ -2,15 +2,14 @@ import { FC } from 'react'
 import cn from 'clsx'
 import type { Page } from '@commerce/types/page'
 import { Container } from '@components/ui'
-import fashionLogo from '../../../public/icon_f_3.png'
-import instagram from '../../../public/icon_f_i_1.png'
-import twitter from '../../../public/icon_f_t_2.png'
-import discord from '../../../public/icon_f_d_3.png'
+import fashionLogo from '../../../public/fashion3-filled.png'
 import s from './Footer.module.css'
 import Image from 'next/image'
 import getSlug from '@lib/get-slug'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { BlankLink } from '@components/common/Link'
+import { Discord, Instagram, Twitter } from '@components/icons'
 
 type LinkSection = {
   title: string
@@ -55,18 +54,18 @@ const Footer: FC<Props> = ({ className, pages }) => {
         <div className="flex flex-wrap items-start justify-center lg:justify-between md:justify-center">
           <div className="lg:flex-1 sm:mx-auto md:mx-0 mb-5 md:mb-0">
             <div>
-              <Image src={fashionLogo} alt="fashion3" />
+              <Image src={fashionLogo} alt="fashion3" quality={100} />
             </div>
             <div className="mt-14 ml-8 flex items-center gap-[2rem]">
-              <a href="">
-                <Image src={instagram} alt="instagram" />
-              </a>
-              <a href="">
-                <Image src={twitter} alt="twitter" />
-              </a>
-              <a href="">
-                <Image src={discord} alt="discord" />
-              </a>
+              <BlankLink href="">
+                <Instagram />
+              </BlankLink>
+              <BlankLink href="https://twitter.com/fashion3_">
+                <Twitter />
+              </BlankLink>
+              <BlankLink href="https://discord.com/invite/9qtGAZBpc7">
+                <Discord />
+              </BlankLink>
             </div>
           </div>
           <div className={s.linksContainer}>

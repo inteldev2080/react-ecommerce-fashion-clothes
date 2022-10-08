@@ -4,7 +4,7 @@
 }
 
 .containerInner {
-  @apply relative flex mt-20 flex-wrap lg:flex-nowrap pb-44;
+  @apply relative flex pt-20 flex-wrap lg:flex-nowrap pb-12;
 }
 
 .main {
@@ -40,8 +40,8 @@
   @apply grid grid-cols-2 py-2 gap-2 md:grid-cols-4 md:gap-7;
 }
 
-.bottomLogo {
-  @apply absolute bottom-0 right-0 h-44;
+.fashion3BottomRight {
+  @apply ml-auto h-44 mb-12;
 }
 
 @screen lg {
@@ -56,8 +56,4 @@
   .sidebar {
     @apply col-span-4 py-6;
   }
-}
-
-.bottomMainLogo {
-  @apply mt-5 flex-row-reverse flex;
 }
