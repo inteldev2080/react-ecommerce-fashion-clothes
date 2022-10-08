@@ -54,8 +54,8 @@ const normalizeProductOption = ({
 
 const normalizeProductImages = ({ edges }: ImageConnection) =>
   edges?.map(({ node: { originalSrc: url, ...rest } }) => ({
-    url,
     ...rest,
+    url,
   }))
 
 const normalizeProductVariants = ({ edges }: ProductVariantConnection) => {
