@@ -7,6 +7,8 @@ import Image from 'next/future/image'
 import { ActiveProduct } from '@components/common/HeroNav/ActiveProduct'
 import Link from 'next/link'
 import { Plus } from '@components/icons'
+import f3Outline from '../../../public/fashion3-bottom-left.png'
+import fw2022Hero from '../../../public/fw2022-hero.png'
 
 interface VerticalItem {
   name: string
@@ -49,11 +51,16 @@ const HeroNav = ({ products }: Props): JSX.Element => {
   const activeProduct = products.find((product) => product.id === activeId)
 
   const onProductClick = (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    { currentTarget }: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     product: Product
   ) => {
-    e.currentTarget.scrollIntoView({ block: 'center', behavior: 'smooth' })
     setActiveId(product.id)
+    const parent = currentTarget.parentElement!.parentElement!
+    const top =
+      currentTarget.offsetTop -
+      parent.offsetTop -
+      (parent.offsetHeight - currentTarget.offsetHeight) / 2
+    parent.scrollTo({ top, behavior: 'smooth' })
   }
 
   return (
@@ -83,19 +90,12 @@ const HeroNav = ({ products }: Props): JSX.Element => {
           <ActiveProduct product={activeProduct} key={activeProduct.id} />
         )}
         <Image
-          src="/fashion3-outline.png"
-          width={701}
-          height={171}
+          src={f3Outline}
           className={s.fashionImage}
+          width={701}
           alt="Fashion3"
         />
-        <Image
-          src="/fw2022-hero.png"
-          width={923}
-          height={877}
-          className={s.heroImage}
-          alt="FW2022"
-        />
+        <Image src={fw2022Hero} className={s.heroImage} alt="FW2022" />
       </div>
     </div>
   )
