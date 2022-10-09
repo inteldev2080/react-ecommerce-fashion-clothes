@@ -31,6 +31,11 @@ export type ProductVariant = {
   availableForSale?: boolean
 }
 
+export type ProductCollection = {
+  id: string
+  title: string
+}
+
 type Metafield<T> = {
   value: T
 } | null
@@ -40,6 +45,7 @@ export type Product = {
   name: string
   description: string
   descriptionHtml?: string
+  productType: string
   sku?: string
   slug?: string
   path?: string
@@ -52,6 +58,7 @@ export type Product = {
   fabric: Metafield<string>
   price: ProductPrice
   options: ProductOption[]
+  collections: ProductCollection[]
   vendor?: string
   tags?: string[]
 }

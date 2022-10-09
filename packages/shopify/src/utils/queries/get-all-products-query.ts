@@ -11,6 +11,15 @@ export const productConnectionFragment = /* GraphQL */ `
         vendor
         handle
         description
+        productType
+        collections(first: 5) {
+          edges {
+            node {
+              id
+              title
+            }
+          }
+        }
         short_description: metafield(
           namespace: "custom"
           key: "short_description"

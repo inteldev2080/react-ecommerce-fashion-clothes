@@ -7,6 +7,7 @@ import {
   Checkout,
   CheckoutLineItemEdge,
   Collection,
+  CollectionConnection,
   ImageConnection,
   MoneyV2,
   Page as ShopifyPage,
@@ -58,6 +59,12 @@ const normalizeProductImages = ({ edges }: ImageConnection) =>
     url,
   }))
 
+const normalizeCollections = ({ edges }: CollectionConnection) =>
+  edges?.map(({ node: { id, title } }) => ({
+    id,
+    title,
+  }))
+
 const normalizeProductVariants = ({ edges }: ProductVariantConnection) => {
   return edges?.map(
     ({
@@ -106,6 +113,7 @@ export function normalizeProduct({
   priceRange,
   options,
   metafields,
+  collections,
   ...rest
 }: ShopifyProduct): Product {
   return {
@@ -117,6 +125,7 @@ export function normalizeProduct({
     price: money(priceRange?.minVariantPrice),
     images: normalizeProductImages(images),
     variants: variants ? normalizeProductVariants(variants) : [],
+    collections: collections ? normalizeCollections(collections) : [],
     options: options
       ? options
           .filter((o) => o.name !== 'Title') // By default Shopify adds a 'Title' name when there's only one option. We don't need it. https://community.shopify.com/c/Shopify-APIs-SDKs/Adding-new-product-variant-is-automatically-adding-quot-Default/td-p/358095

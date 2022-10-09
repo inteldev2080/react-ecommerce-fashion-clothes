@@ -24,14 +24,14 @@
 }
 
 .sidebarOuter {
-  @apply absolute inset-0 py-9 w-52 pl-12 pr-6 scrollbar-thin overscroll-contain;
+  @apply absolute inset-0 py-9 w-52 pr-6 scrollbar-thin overscroll-contain;
 }
 
 .sidebar {
-  @apply min-h-full flex flex-col items-start justify-center space-y-12;
+  @apply min-h-full flex flex-col items-start justify-center space-y-8;
 
   .button {
-    @apply block w-full text-left overflow-hidden text-primary uppercase pl-3 border-l-2 border-transparent transition-colors truncate;
+    @apply block w-full text-left overflow-hidden text-primary uppercase pl-14 py-2 border-l-4 border-transparent transition-colors truncate;
 
     &:hover,
     &.active {
@@ -80,7 +80,7 @@
   @apply flex flex-col items-end space-y-6 col-span-full row-span-full;
 
   .activeImage {
-    @apply relative max-w-full transition-opacity;
+    @apply relative max-w-full;
     height: 360px;
     width: 240px;
 
@@ -92,8 +92,8 @@
 
   &.loaded {
     canvas {
-      animation-delay: 0.5s;
-      animation-duration: 0.25s;
+      animation-delay: 0.4s;
+      animation-duration: 0.1s;
       animation-fill-mode: forwards;
       animation-name: fadeOut;
       animation-timing-function: ease-in-out;

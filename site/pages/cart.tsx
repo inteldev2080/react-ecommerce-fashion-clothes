@@ -73,15 +73,12 @@ export default function Cart() {
         <div className="lg:col-span-7">
           {isLoading || isEmpty ? (
             <div className="flex-1 px-12 py-24 flex flex-col justify-center items-center ">
-              <span className="border border-dashed border-secondary flex items-center justify-center w-16 h-16 bg-primary p-12 rounded-lg text-primary">
+              <span className="flex items-center justify-center w-16 h-16 bg-primary p-12 rounded-lg text-primary">
                 <Bag className="absolute" />
               </span>
               <h2 className="pt-6 text-2xl font-bold tracking-wide text-center">
                 Your cart is empty
               </h2>
-              <p className="text-accent-6 px-10 text-center pt-2">
-                Biscuit oat cake wafer icing ice cream tiramisu pudding cupcake.
-              </p>
             </div>
           ) : error ? (
             <div className="flex-1 px-4 flex flex-col justify-center items-center">

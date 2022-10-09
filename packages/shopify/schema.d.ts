@@ -7420,6 +7420,15 @@ export type ProductConnectionFragment = {
       vendor: string
       handle: string
       description: string
+      productType: string
+      collections: {
+        __typename?: 'CollectionConnection'
+        edges: Array<{
+          __typename?: 'CollectionEdge'
+          node: { __typename?: 'Collection'; id: string; title: string }
+        }>
+      }
+      short_description?: { __typename?: 'Metafield'; value: string } | null
       priceRange: {
         __typename?: 'ProductPriceRange'
         minVariantPrice: {
@@ -7475,6 +7484,15 @@ export type GetAllProductsQuery = {
         vendor: string
         handle: string
         description: string
+        productType: string
+        collections: {
+          __typename?: 'CollectionConnection'
+          edges: Array<{
+            __typename?: 'CollectionEdge'
+            node: { __typename?: 'Collection'; id: string; title: string }
+          }>
+        }
+        short_description?: { __typename?: 'Metafield'; value: string } | null
         priceRange: {
           __typename?: 'ProductPriceRange'
           minVariantPrice: {
@@ -7733,6 +7751,18 @@ export type GetProductsFromCollectionQuery = {
               vendor: string
               handle: string
               description: string
+              productType: string
+              collections: {
+                __typename?: 'CollectionConnection'
+                edges: Array<{
+                  __typename?: 'CollectionEdge'
+                  node: { __typename?: 'Collection'; id: string; title: string }
+                }>
+              }
+              short_description?: {
+                __typename?: 'Metafield'
+                value: string
+              } | null
               priceRange: {
                 __typename?: 'ProductPriceRange'
                 minVariantPrice: {

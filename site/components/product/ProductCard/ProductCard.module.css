@@ -5,13 +5,13 @@
   height: 100% !important;
 }
 
-.header {
+.header,
+.header .name {
   @apply transition-colors ease-in-out duration-300;
 }
 
 .header .name {
-  @apply pt-0 max-w-full w-full leading-extra-loose
-  transition-colors ease-in-out duration-300;
+  @apply pt-0 max-w-full w-full leading-extra-loose;
   font-size: 2rem;
   letter-spacing: 0.4px;
 }
@@ -50,7 +50,7 @@
 
 /* Variant Simple */
 .simple.root {
-  @apply relative pl-8;
+  @apply relative pl-12;
 
   img {
     @apply outline outline-2 outline-transparent transition-all;
@@ -59,21 +59,21 @@
 }
 
 .simple .header {
-  @apply absolute -top-4 z-10 -rotate-90 origin-right px-3 duration-300;
-  right: calc(100% - 18px);
+  @apply absolute -top-6 z-10 -rotate-90 origin-right px-3 py-1.5 duration-300;
+  right: calc(100% - 28px);
 
   .name {
-    @apply text-inherit text-lg whitespace-nowrap !important;
+    @apply text-inherit text-2xl whitespace-nowrap !important;
   }
 }
 
 .simple .price {
-  @apply pt-1 text-xl;
+  @apply pt-2 text-xl;
 }
 
 .simple:hover {
   .header {
-    @apply bg-black text-white transition-colors;
+    @apply bg-black text-white;
   }
 
   img {

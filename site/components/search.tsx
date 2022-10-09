@@ -20,15 +20,16 @@ import fashionOutlined from '../public/fashion3-outline-side.png'
 import s from '@components/product/ProductView/ProductView.module.css'
 import ps from '../components/product/ProductSidebar/ProductSidebar.module.css'
 
-const SORT = {
-  'trending-desc': 'Trending',
-  'latest-desc': 'Latest arrivals',
-  'price-asc': 'Price: Low to high',
-  'price-desc': 'Price: High to low',
+enum SORT {
+  season = 'Season',
+  categories = 'Categories',
+  featured = 'Featured',
 }
 
+type SortBy = SORT | null
+
 export default function Search({ categories, brands }: SearchPropsType) {
-  const [activeFilter, setActiveFilter] = useState('')
+  const [activeFilter, setActiveFilter] = useState<SortBy>(null)
   const [toggleFilter, setToggleFilter] = useState(false)
 
   const router = useRouter()
@@ -49,11 +50,57 @@ export default function Search({ categories, brands }: SearchPropsType) {
     search: typeof q === 'string' ? q : '',
     categoryId: activeCategory?.id,
     brandId: (activeBrand as any)?.entityId,
-    sort: typeof sort === 'string' ? sort : '',
+    sort: sort === SORT.featured ? 'trending-desc' : '',
     locale,
   })
 
-  const handleClick = (event: any, filter: string) => {
+  let groupedProducts:
+    | {
+        name?: string
+        products: Product[]
+      }[]
+    | undefined = undefined
+  if (data?.products && (!toggleFilter || !activeFilter)) {
+    groupedProducts = [{ products: data.products }]
+  } else if (
+    data?.products &&
+    toggleFilter &&
+    activeFilter === ('categories' as SORT)
+  ) {
+    const uniqueCategories = data?.products
+      .map((product) => product.productType)
+      .filter((value, index, self) => self.indexOf(value) === index)
+    groupedProducts = uniqueCategories.map((name) => ({
+      name: name?.length > 0 ? name : 'Uncategorized',
+      products: data.products.filter((product) => product.productType === name),
+    }))
+  } else if (
+    data?.products &&
+    toggleFilter &&
+    activeFilter === ('season' as SORT)
+  ) {
+    const uniqueCollections = data?.products
+      .flatMap((product) => product.collections)
+      .filter(
+        (value, index, self) =>
+          self.findIndex((c) => c.id === value.id) === index
+      )
+
+    groupedProducts = uniqueCollections.map((collection) => ({
+      name: collection.title,
+      products: data.products.filter((product) =>
+        product.collections.some((c) => c.id === collection.id)
+      ),
+    }))
+    groupedProducts.push({
+      name: 'Uncategorized',
+      products: data.products.filter(
+        (product) => product.collections.length === 0
+      ),
+    })
+  }
+
+  const handleClick = (event: any, filter: SortBy) => {
     if (filter !== activeFilter) {
       setToggleFilter(true)
     } else {
@@ -281,7 +328,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 <span className="rounded-md shadow-sm">
                   <button
                     type="button"
-                    onClick={(e) => handleClick(e, 'sort')}
+                    onClick={(e) => handleClick(e, null)}
                     className="flex justify-between w-full rounded-sm border border-accent-3 px-4 py-3 bg-accent-0 text-sm leading-5 font-medium text-accent-4 hover:text-accent-5 focus:outline-none focus:border-blue-300 focus:shadow-outline-normal active:bg-accent-1 active:text-accent-8 transition ease-in-out duration-150"
                     id="options-menu"
                     aria-haspopup="true"
@@ -305,9 +352,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
               </div>
               <div
                 className={`origin-top-left absolute lg:relative left-0 mt-2 w-full rounded-md shadow-lg lg:shadow-none z-10 mb-16 lg:block ${
-                  activeFilter !== 'sort' || toggleFilter !== true
-                    ? 'hidden'
-                    : ''
+                  activeFilter !== null || toggleFilter !== true ? 'hidden' : ''
                 }`}
               >
                 <div className="rounded-sm bg-accent-0 shadow-xs lg:bg-none lg:shadow-none">
@@ -319,7 +364,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
                   >
                     <Link href={{ pathname, query: filterQuery({ q }) }}>
                       <a
-                        onClick={(e) => handleClick(e, 'sort')}
+                        onClick={(e) => handleClick(e, null)}
                         className={
                           'block lg:inline-block px-4 py-2 lg:p-0 lg:my-2 lg:mx-4 text-xl font-normal'
                         }
@@ -330,21 +375,13 @@ export default function Search({ categories, brands }: SearchPropsType) {
                     <ul className="flex space-x-2">
                       {Object.entries(SORT).map(([key, text]) => (
                         <li key={key}>
-                          <Link
-                            href={{
-                              pathname,
-                              query: filterQuery({ q, sort: key }),
-                            }}
+                          <Button
+                            onClick={(e) => handleClick(e, key as SORT)}
+                            active={toggleFilter && activeFilter === key}
+                            inverted
                           >
-                            <Button
-                              Component={'a'}
-                              onClick={(e) => handleClick(e, 'sort')}
-                              active={sort === key}
-                              inverted
-                            >
-                              {text}
-                            </Button>
-                          </Link>
+                            {text}
+                          </Button>
                         </li>
                       ))}
                     </ul>
@@ -401,24 +438,33 @@ export default function Search({ categories, brands }: SearchPropsType) {
                 )}
               </div>
             )}
-            {data ? (
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 lg:grid-cols-5">
-                {data.products.map((product: Product) => (
-                  <ProductCard
-                    variant="simple"
-                    key={product.path}
-                    className="animated fadeIn"
-                    product={product}
-                    imgProps={{
-                      width: 480,
-                      height: 480,
-                      alt: product.name,
-                    }}
-                  />
+            {groupedProducts ? (
+              <div className="space-y-24">
+                {groupedProducts.map((group) => (
+                  <div key={group.name}>
+                    {group.name && (
+                      <h4 className="mb-8 text-3xl">{group.name}</h4>
+                    )}
+                    <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+                      {group.products.map((product: Product) => (
+                        <ProductCard
+                          variant="simple"
+                          key={product.path}
+                          className="animated fadeIn"
+                          product={product}
+                          imgProps={{
+                            width: 480,
+                            height: 480,
+                            alt: product.name,
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
             ) : (
-              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 lg:grid-cols-5">
                 {rangeMap(12, (i) => (
                   <Skeleton key={i}>
                     <div className="w-60 h-60" />
