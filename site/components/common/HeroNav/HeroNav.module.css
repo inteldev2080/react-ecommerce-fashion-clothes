@@ -66,13 +66,34 @@
   @apply absolute z-0 left-0 bottom-20;
 }
 
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
 .activeProduct {
   @apply mt-32 ml-16 flex flex-col items-end space-y-6 z-20 w-full max-w-md;
 
   .activeImage {
-    @apply relative object-cover h-auto max-w-full w-auto;
-    height: 339px;
-    width: 226px;
+    @apply relative h-auto max-w-full w-auto transition-opacity;
+    height: 360px;
+    width: 240px;
+
+    img,
+    canvas {
+      @apply absolute inset-0 w-full h-full object-cover !important;
+    }
+  }
+
+  &.loaded {
+    canvas {
+      animation-delay: 0.5s;
+      animation-duration: 0.25s;
+      animation-fill-mode: forwards;
+      animation-name: fadeOut;
+      animation-timing-function: ease-in-out;
+    }
   }
 
   .desc {

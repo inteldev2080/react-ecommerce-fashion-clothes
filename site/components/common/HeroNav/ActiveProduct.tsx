@@ -1,23 +1,43 @@
 import { Product } from '@commerce/types/product'
 import s from './HeroNav.module.css'
-import Image from 'next/future/image'
 import Link from 'next/link'
+import Image from 'next/future/image'
 import { Button } from '@components/ui'
 import { Plus } from '@components/icons'
+import dynamic from 'next/dynamic'
+import { useState } from 'react'
+import cn from 'clsx'
+
+const Glitch = dynamic(() => import('@components/common/Glitch/Glitch'), {
+  ssr: false,
+})
 
 const placeholderImg = '/product-img-placeholder.svg'
 
-export const ActiveProduct = ({ product }: { product: Product }) => {
+export const ActiveProduct = ({
+  product,
+}: {
+  product: Product
+  key: string
+}) => {
+  const [isLoaded, setIsLoaded] = useState(false)
+
   return (
-    <div className={s.activeProduct}>
-      <Image
-        quality="85"
-        src={product.images[0]?.url || placeholderImg}
-        alt={product.name || 'Product Image'}
-        width={340}
-        height={340}
-        className={s.activeImage}
-      />
+    <div className={cn(s.activeProduct, { [s.loaded]: isLoaded })}>
+      <div className={s.activeImage}>
+        <Image
+          quality="85"
+          src={product.images[0]?.url || placeholderImg}
+          alt={product.name || 'Product Image'}
+          width={240}
+          height={360}
+        />
+        <Glitch
+          src={product.images[0]?.url || placeholderImg}
+          onLoad={() => setIsLoaded(true)}
+          key={product.id}
+        />
+      </div>
       <Link href={`/product/${product.slug}`}>
         <Button Component={'a'} className={s.productLink} inverted>
           <div>

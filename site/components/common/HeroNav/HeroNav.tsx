@@ -62,7 +62,7 @@ const HeroNav = ({ products }: Props): JSX.Element => {
       <div className={s.side}>
         <div className={s.sidebarOuter}>
           <nav className={s.sidebar}>
-            {repeat<Product>(products, 5).map((product) => (
+            {repeat<Product>(products, 1).map((product) => (
               <button
                 key={product.id}
                 className={cn(s.button, {
@@ -79,7 +79,9 @@ const HeroNav = ({ products }: Props): JSX.Element => {
         <VerticalNav items={verticalItems} />
       </div>
       <div className={s.main}>
-        {activeProduct && <ActiveProduct product={activeProduct} />}
+        {activeProduct && (
+          <ActiveProduct product={activeProduct} key={activeProduct.id} />
+        )}
         <Image
           src="/fashion3-outline.png"
           width={701}
