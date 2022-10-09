@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { Plus } from '@components/icons'
 import f3Outline from '../../../public/fashion3-bottom-left.png'
 import fw2022Hero from '../../../public/fw2022-hero.png'
+import { AnimatePresence } from 'framer-motion'
 
 interface VerticalItem {
   name: string
@@ -86,9 +87,13 @@ const HeroNav = ({ products }: Props): JSX.Element => {
         <VerticalNav items={verticalItems} />
       </div>
       <div className={s.main}>
-        {activeProduct && (
-          <ActiveProduct product={activeProduct} key={activeProduct.id} />
-        )}
+        <div className={s.activeProductContainer}>
+          <AnimatePresence>
+            {activeProduct && (
+              <ActiveProduct product={activeProduct} key={activeProduct.id} />
+            )}
+          </AnimatePresence>
+        </div>
         <Image
           src={f3Outline}
           className={s.fashionImage}

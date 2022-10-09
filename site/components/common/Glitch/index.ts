@@ -1,1 +1,1 @@
-export { default } from './glitcher'
+export { default } from './Glitch'

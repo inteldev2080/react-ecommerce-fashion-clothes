@@ -27,8 +27,4 @@
 
 .logo {
   @apply cursor-pointer transform duration-100 ease-in-out;
-
-  &:hover {
-    transform: scale(1.015);
-  }
 }
