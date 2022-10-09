@@ -1,25 +1,25 @@
 {
-  "title": "ACME Storefront | Powered by Next.js Commerce",
-  "titleTemplate": "%s - ACME Storefront",
-  "description": "Next.js Commerce - https://www.nextjs.org/commerce",
+  "title": "fashion³",
+  "titleTemplate": "%s - fashion³",
+  "description": "fashion³ Manhattan. Digital fashion house.",
   "openGraph": {
-    "title": "ACME Storefront | Powered by Next.js Commerce",
-    "description": "Next.js Commerce - https://www.nextjs.org/commerce",
+    "title": "fashion³",
+    "description": "fashion³ Manhattan. Digital fashion house.",
     "type": "website",
     "url": "https://nextjs.org/commerce",
-    "site_name": "Next.js Commerce",
+    "site_name": "fashion³",
     "images": [
       {
         "url": "/card.png",
-        "width": "800",
-        "height": "600",
-        "alt": "Next.js Commerce"
+        "width": "1200",
+        "height": "630",
+        "alt": "fashion³"
       }
     ]
   },
   "twitter": {
-    "handle": "@nextjs",
-    "site": "@nextjs",
+    "handle": "@fashion3_",
+    "site": "@fashion3_",
     "cardType": "summary_large_image"
   }
 }

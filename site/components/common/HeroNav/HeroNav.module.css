@@ -80,7 +80,7 @@
     padding-left: 15%;
 
     & > span {
-      @apply text-lg box-decoration-clone bg-secondary text-secondary line-clamp-3;
+      @apply text-lg box-decoration-clone bg-secondary text-secondary line-clamp-3 px-1;
     }
   }
 }
