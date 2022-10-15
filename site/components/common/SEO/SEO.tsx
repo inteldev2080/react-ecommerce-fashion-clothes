@@ -111,11 +111,7 @@ const SEO: FC<Props> = ({
         property="og:site_name"
         content={openGraph?.site_name ?? config.openGraph.site_name}
       />
-      <meta
-        key="og:url"
-        property="og:url"
-        content={openGraph?.url ?? config.openGraph.url}
-      ></meta>
+      <meta key="og:url" property="og:url" content={config.openGraph.url} />
       {openGraph?.locale && (
         <meta key="og:locale" property="og:locale" content={openGraph.locale} />
       )}

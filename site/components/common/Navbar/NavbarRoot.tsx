@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import throttle from 'lodash.throttle'
 import cn from 'clsx'
 import s from './Navbar.module.css'
+import { motion } from 'framer-motion'
 
 interface Props {
   className?: string
@@ -29,11 +30,12 @@ const NavbarRoot = ({ children, className }: Props): JSX.Element => {
   }, [hasScrolled])
 
   return (
-    <div
+    <motion.div
+      key="nav"
       className={cn(s.root, /*{ 'shadow-magical': hasScrolled },*/ className)}
     >
       {children}
-    </div>
+    </motion.div>
   )
 }
 
