@@ -133,6 +133,8 @@ export function normalizeProduct({
       : [],
     ...(description && { description }),
     ...(descriptionHtml && { descriptionHtml }),
+    // @ts-ignore
+    featured: rest.featured?.value === 'true',
     ...rest,
   }
 }

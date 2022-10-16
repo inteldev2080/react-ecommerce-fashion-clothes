@@ -1,16 +1,19 @@
 .root {
-  @apply relative min-h-screen grid min-h-0;
+  @apply relative grid h-screen;
   grid-template-areas:
     'nav'
     'main';
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
+  max-height: 1080px;
+
   @media (min-width: 768px) {
     grid-template-areas:
       'side nav'
       'side main';
     grid-template-columns: auto minmax(0, 1fr);
     grid-template-rows: auto minmax(0, 1fr);
+    min-height: 880px;
   }
 }
 
@@ -20,7 +23,7 @@
 
 .side {
   grid-area: side;
-  @apply relative w-48 z-20;
+  @apply relative w-48 z-20 hidden md:block;
 }
 
 .sidebarOuter {
@@ -53,7 +56,9 @@
 .main {
   @apply flex items-center pb-2;
   grid-area: main;
-  min-height: 880px;
+  @media (min-width: 768px) {
+    min-height: 880px;
+  }
 }
 
 .heroImage {
@@ -73,7 +78,7 @@
 }
 
 .activeProductContainer {
-  @apply relative mt-32 ml-16 w-full max-w-md z-20 grid;
+  @apply relative mt-32 ml-16 w-full max-w-md z-20 hidden md:grid;
 }
 
 .activeProduct {

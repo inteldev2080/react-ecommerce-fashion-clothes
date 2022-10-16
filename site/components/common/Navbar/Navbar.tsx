@@ -4,6 +4,7 @@ import s from './Navbar.module.css'
 import NavbarRoot from './NavbarRoot'
 import { Container, Logo } from '@components/ui'
 import { Searchbar, UserNav } from '@components/common'
+import { motion } from 'framer-motion'
 
 interface Link {
   href: string
@@ -16,9 +17,9 @@ interface NavbarProps {
 }
 
 const Navbar: FC<NavbarProps> = ({ links, className = '' }) => (
-  <NavbarRoot>
+  <NavbarRoot className={className}>
     <Container clean className="mx-auto max-w-8xl px-8">
-      <div className={s.nav}>
+      <motion.div className={s.nav} layoutId="navbar">
         <div className="flex items-center flex-1">
           <Link href="/">
             <a className={s.logo} aria-label="Logo">
@@ -34,7 +35,7 @@ const Navbar: FC<NavbarProps> = ({ links, className = '' }) => (
         <div className="flex items-center justify-end flex-1 space-x-8">
           <UserNav />
         </div>
-      </div>
+      </motion.div>
       {process.env.COMMERCE_SEARCH_ENABLED && (
         <div className="flex pb-4 lg:px-6 lg:hidden">
           <Searchbar id="mobile-search" />

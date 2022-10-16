@@ -76,6 +76,17 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+table,
+th,
+td {
+  @apply border-collapse border-2 border-gray-300;
+}
+
+td,
+th {
+  @apply text-center px-4 py-1.5 text-lg;
+}
+
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
