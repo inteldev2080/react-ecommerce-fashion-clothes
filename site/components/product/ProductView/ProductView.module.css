@@ -41,7 +41,7 @@
 }
 
 .fashion3BottomRight {
-  @apply ml-auto h-44 mb-12;
+  @apply ml-auto h-44 mb-12 object-contain;
 }
 
 @screen lg {
@@ -56,4 +56,28 @@
   .sidebar {
     @apply col-span-4 py-6;
   }
+}
+
+/* Animation */
+@keyframes fadeFromLeft {
+  0% {
+    clip-path: inset(0 0 0 100%);
+    opacity: 0.5;
+    transform: translateX(-100%);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.img,
+.sidebar {
+  @apply transform;
+  animation-fill-mode: both;
+}
+
+.img {
+  animation: fadeFromLeft 500ms ease-in-out both;
 }

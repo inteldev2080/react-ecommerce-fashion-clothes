@@ -35,6 +35,7 @@ const ProductView: FC<ProductViewProps> = ({ product, relatedProducts }) => {
                   height={600}
                   priority={i === 0}
                   quality="85"
+                  style={{ animationDelay: `${i * 150 + 300}ms` }}
                 />
               ))}
             </div>

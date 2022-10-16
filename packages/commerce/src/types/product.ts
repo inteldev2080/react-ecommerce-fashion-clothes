@@ -56,6 +56,7 @@ export type Product = {
   subsystems: Metafield<string>
   size_guide: Metafield<string>
   fabric: Metafield<string>
+  featured: boolean
   price: ProductPrice
   options: ProductOption[]
   collections: ProductCollection[]

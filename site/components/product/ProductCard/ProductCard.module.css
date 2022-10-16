@@ -7,7 +7,7 @@
 
 .header,
 .header .name {
-  @apply transition-colors ease-in-out duration-300;
+  @apply transition-colors ease-in-out duration-100;
 }
 
 .header .name {
@@ -18,7 +18,7 @@
 
 .header .name span {
   @apply text-primary font-bold
-  transition-colors ease-in-out duration-300;
+  transition-colors ease-in-out duration-100;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   font-size: inherit;
@@ -28,7 +28,7 @@
 .header .price {
   @apply pt-2 px-6 pb-4 text-sm text-accent-9
   font-semibold inline-block tracking-wide
-  transition-colors ease-in-out duration-300;
+  transition-colors ease-in-out duration-100;
 }
 
 .imageContainer {
@@ -40,7 +40,7 @@
 }
 
 .imageContainer .productImage {
-  @apply transform transition-transform duration-300
+  @apply transform transition-transform duration-100
   object-cover h-72;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .simple .header {
-  @apply absolute -top-6 z-10 -rotate-90 origin-right px-3 py-1.5 duration-300;
+  @apply absolute -top-6 z-10 -rotate-90 origin-right px-3 py-1.5 duration-100 ease-linear;
   right: calc(100% - 28px);
 
   .name {

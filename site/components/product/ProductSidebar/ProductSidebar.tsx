@@ -1,6 +1,5 @@
-import s from './ProductSidebar.module.css'
-import { useAddItem } from '@framework/cart'
-import { FC, useEffect, useState } from 'react'
+import { FC, useEffect, useMemo, useState } from 'react'
+import { parse } from 'csv-parse/sync'
 import { ProductOptions } from '@components/product'
 import type { Product } from '@commerce/types/product'
 import { Button, useUI } from '@components/ui'
@@ -14,6 +13,9 @@ import usePrice from '@framework/product/use-price'
 import fashionOutlined from '../../../public/fashion3-outline-side.png'
 import Image from 'next/future/image'
 import { Plus } from '@components/icons'
+import s from './ProductSidebar.module.css'
+import { useAddItem } from '@framework/cart'
+import Table from '@components/common/Table'
 
 interface ProductSidebarProps {
   product: Product
@@ -52,11 +54,23 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
     currencyCode: product.price.currencyCode!,
   })
 
+  const sizingGuide = useMemo<null | string | string[][]>(() => {
+    if (!product.size_guide?.value) return null
+    try {
+      return parse(product.size_guide?.value, {
+        skip_empty_lines: true,
+      })
+    } catch (err) {
+      console.log(err)
+    }
+    return product.size_guide?.value
+  }, [product.size_guide?.value])
+
   return (
     <div className="flex w-full">
       <Image src={fashionOutlined} className={s.sideLogo} alt="Fashion3" />
 
-      <div className="basis-2/4 mx-auto px-4 lg:px-0">
+      <div className={s.productInner}>
         <ProductTag name={product.name} price={price} fontSize={32} />
 
         <div className="mt-6 flex gap-4">
@@ -73,7 +87,12 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
           <div className="flex items-center">
             <h3 className={s.heading}>Description</h3>
           </div>
-          <div className={s.description}>{product.description}</div>
+          <div
+            className={s.description}
+            dangerouslySetInnerHTML={{
+              __html: product.descriptionHtml ?? product.description,
+            }}
+          />
         </div>
         {product.options.length > 0 && (
           <div className="mt-12">
@@ -109,10 +128,16 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
           )}
         </div>
         <div className={s.meta}>
-          {product.size_guide && (
+          {sizingGuide && (
             <div>
               <h3 className={s.heading}>Size Guide</h3>
-              <div>{product.size_guide.value}</div>
+              <div>
+                {typeof sizingGuide === 'string' ? (
+                  sizingGuide
+                ) : (
+                  <Table columns={sizingGuide} />
+                )}
+              </div>
             </div>
           )}
           {product.fabric && (
