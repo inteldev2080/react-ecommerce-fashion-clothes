@@ -28,6 +28,11 @@ enum SORT {
 
 type SortBy = SORT | null
 
+type ProductGroup = {
+  name?: string
+  products: Product[]
+}
+
 export default function Search({ categories, brands }: SearchPropsType) {
   const [activeFilter, setActiveFilter] = useState<SortBy>(null)
   const [toggleFilter, setToggleFilter] = useState(false)
@@ -54,12 +59,7 @@ export default function Search({ categories, brands }: SearchPropsType) {
     locale,
   })
 
-  let groupedProducts:
-    | {
-        name?: string
-        products: Product[]
-      }[]
-    | undefined = undefined
+  let groupedProducts: ProductGroup[] | undefined = undefined
   if (data?.products && (!toggleFilter || !activeFilter)) {
     groupedProducts = [{ products: data.products }]
   } else if (
@@ -98,6 +98,19 @@ export default function Search({ categories, brands }: SearchPropsType) {
         (product) => product.collections.length === 0
       ),
     })
+  } else if (
+    data?.products &&
+    toggleFilter &&
+    activeFilter === ('featured' as SORT)
+  ) {
+    groupedProducts = [
+      {
+        products: data.products.sort((a, b) => {
+          console.log(a, b)
+          return a.featured === b.featured ? 0 : a.featured ? -1 : 1
+        }),
+      },
+    ]
   }
 
   const handleClick = (event: any, filter: SortBy) => {
