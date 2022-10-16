@@ -70,7 +70,7 @@ const ProductSidebar: FC<ProductSidebarProps> = ({ product, className }) => {
     <div className="flex w-full">
       <Image src={fashionOutlined} className={s.sideLogo} alt="Fashion3" />
 
-      <div className="basis-2/4 mx-auto px-4 lg:px-0">
+      <div className={s.productInner}>
         <ProductTag name={product.name} price={price} fontSize={32} />
 
         <div className="mt-6 flex gap-4">

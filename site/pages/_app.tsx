@@ -6,7 +6,6 @@ import React, { useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import { Head } from '@components/common'
 import { ManagedUIContext } from '@components/ui/context'
-import { AnimatePresence } from 'framer-motion'
 
 const Noop = ({ children }: { children?: React.ReactNode }): JSX.Element => (
   <>{children}</>
@@ -23,15 +22,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <Head />
       <ManagedUIContext>
-        <AnimatePresence
-          exitBeforeEnter
-          initial={false}
-          onExitComplete={() => window.scrollTo(0, 0)}
-        >
-          <Layout pageProps={pageProps}>
-            <Component {...pageProps} />
-          </Layout>
-        </AnimatePresence>
+        <Layout pageProps={pageProps}>
+          <Component {...pageProps} />
+        </Layout>
       </ManagedUIContext>
     </>
   )
